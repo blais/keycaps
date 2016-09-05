@@ -1,0 +1,25 @@
+#!/usr/bin/env python3
+"""Print out the full list of roles.
+"""
+__author__ = 'Martin Blais <blais@furius.ca>'
+
+import argparse
+
+import keycaps
+
+
+def main():
+    parser = argparse.ArgumentParser(description=__doc__.strip())
+    parser.add_argument('filenames', nargs='+', help='Filenames')
+    args = parser.parse_args()
+
+    for filename in args.filenames:
+        kits = keycaps.read_file(filename)
+        for kit in kits.kit:
+            for key in kit.key:
+                if key.role:
+                    print(key.role)
+
+
+if __name__ == '__main__':
+    main()

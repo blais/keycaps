@@ -1,0 +1,30 @@
+#!/usr/bin/env python3
+"""Validate the data format against the schema, by parsing.
+"""
+__author__ = 'Martin Blais <blais@furius.ca>'
+
+import argparse
+
+import keycaps
+import keycaps_pb2
+
+
+def main():
+    parser = argparse.ArgumentParser(description=__doc__.strip())
+    parser.add_argument('filenames', nargs='+', help='Filenames')
+    parser.add_argument('--kit', action='store_true', help="Check kits")
+    parser.add_argument('--kbd', action='store_true', help="Check keyboards")
+    args = parser.parse_args()
+
+    if args.kit:
+        cls = keycaps_pb2.Kit
+    if args.kbd:
+        cls = keycaps_pb2.Keyboard
+
+    for filename in args.filenames:
+        print("Checking %s" % filename)
+        kits = keycaps.read_file(filename, cls)
+
+
+if __name__ == '__main__':
+    main()

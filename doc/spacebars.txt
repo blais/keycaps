@@ -1,0 +1,40 @@
+I'm trying to understand what different types of spacebars there are out there.
+
+15 keys wide is 285mm. This makes 19mm spacing each for 15 keys (the key itself
+is a little shorter, like 1mm shorter for the gap between keys).
+
+Let's first inventorize what I have.
+All keys below are Cherry MX stems.
+
+Keys with first Infinity keyboard:
+  6u spacebar = 6 x 19.05mm = 114mm (112mm really, for gaps)
+  -38mm, 0u, +38mm or [-2u, 0u, 2u]
+
+Granite keycap set:
+  6.25u spacebar = 119mm.
+  -50mm, 0mm, +11.5mm, +50mm or [-2.625u, 0u, 0.6u, 2.625u]
+  6.25u spacebar = 119mm.
+  -50mm, 0mm, +11.5mm, +50mm or [-2.625u, 0u, 0.6u, 2.625u]
+
+Keys with Matias Infinity keyboard (ALPS):
+  6u spacebar = 6 x 19mm = 114mm (112mm really, for gaps)
+  -38mm, 0mm, +38mm or [-2u, 0u, +2u]
+
+Dolch keycap:
+  6.25u spacebar = 119mm.
+  -50mm, 0mm, +11.5mm, +50mm or [-2.625u, 0u, 0.6u, 2.625u]
+  7u spacebar = 132mm.
+  -57mm, 0mm, +57mm (3u apart) or [-3u, 0u, +3u]
+
+Danger Zone keycap:
+  6.25u spacebar = 119mm.
+  -50mm, 0mm, +11.5mm, +50mm & three other mounts -- https://photos.google.com/photo/AF1QipNJlf6UHAjifcNxKXmwSRM08HMGqoYSRWxjfjwm
+  7u spacebar = 132mm.
+  -57mm, 0mm, +57mm or [-3u, 0u, +3u]
+
+Hana keycaps
+  6.25u spacebar = 119mm.
+  -50mm, 0mm, +11.5mm, +50mm or [-2.625u, 0u, 0.6u, 2.625u]
+
+For my second Infinity keyboard, I need a spacebar which has [-38u, 0u, +38u]
+spacing.

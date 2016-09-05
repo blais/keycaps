@@ -1,0 +1,231 @@
+// -*- mode: protobuf -*-
+
+syntax = "proto2";
+
+//
+// Describing keycap sets.
+//
+
+// The shape of the key, called its "profile."
+// Refer to: http://www.laurivan.com/wp-content/uploads/2015/06/FamilyProfilesLG.jpg
+enum Profile {
+  DSA = 0;
+
+  SA_R1 = 1;
+  SA_R2 = 2;
+  SA_R3 = 3;
+  SA_R4 = 4;
+
+  SS_R1 = 5;
+  SS_R2 = 6;
+  SS_R3 = 7;
+  SS_R4 = 8;
+
+  DSS_R1 = 9;
+  DSS_R2 = 10;
+  DSS_R3 = 11;
+  DSS_R4 = 12;
+
+  DCS_R1 = 13;
+  DCS_R2 = 14;
+  DCS_R3 = 15;
+  DCS_R4 = 16;
+  DCS_R5 = 17;
+
+  LP = 18;
+
+  KT = 19;
+}
+
+// A particular subgeometry for the profile of a key. Keys in some designs (e.g,
+// SA) are designed to live on a particular keyboard row, and their shape varies
+// from row to row.
+enum Row {
+  R1 = 1;
+  R2 = 2;
+  R3 = 3;
+  R4 = 4;
+  R5 = 5;
+}
+
+// The shape of the stem mounts.
+enum Stem {
+  CHERRY = 0;
+  ALPS = 1;
+  TOPRE = 2;
+}
+
+// The material, type of plastic, the keys are made with.
+enum Material {
+  ABS = 0;
+  PBT = 1;
+  PC = 2;
+  POM = 3;
+  PVC = 4;
+  OTHER = 5;
+}
+
+// The size of the keycap, in units.
+enum Size {
+  U100 = 4;
+  U125 = 5;
+  U150 = 6;
+  U175 = 7;
+  U200 = 8;
+  U225 = 9;
+  U250 = 10;
+  U275 = 11;
+  U300 = 12;
+  U600 = 24;  // Stems: [-2u, 0u, +2u]
+  U625 = 25;  // Stems: [-2.625u, 0u, 0.6u, 2.625u]
+  U625X = 26; // Stems: [-2.625u, -2u, 0u, 0.6u, +2u, +2.625u] (Universal)
+  U700 = 27;  // Stems: [-3u, 0u, +3u]
+
+  // Vertical keys.
+  V200 = 28;
+  VISO = 29;  // The shape of an ISO key.
+}
+
+// The homing characteristic of a key.
+enum Homing {
+  BUMP = 0;
+  DEEP = 1;  // Deep dish homing key.
+}
+
+message Key {
+  // A physical description of the key.
+  required Profile profile = 1;
+  required Stem stem = 2;
+  required Material material = 3;
+
+  // The size of the key.
+  required Size size = 4;
+
+  // The intended role of this key. This is always a word, like "backslash",
+  // even if the key has a glyph on it. If the key has a common pair of symbols,
+  // its role is describe by a compound word for them, such as "slash-question"
+  // or "grave-tilde". This should be left empty if this is a novelty key with
+  // no specific meaning (this should imply that the key can be used flexibly).
+  optional string role = 5;
+
+  // If the key contains a character or actual text, this is it.
+  optional string text = 6;
+
+  // If the key contains a non-text glyph, we insert it here.
+  optional string glyph = 7;
+
+  // The color of the key itself (background color).
+  optional string color = 8;
+
+  // The color of the font or marking on the key (foreground color).
+  optional string color_fore = 9;
+
+  // If set, this is a homing key.
+  optional Homing homing = 10;
+
+  // If the key is designed for a particular row, the row. This is the case for
+  // some SA keycaps, for example, whereby each row has a differently shaped
+  // key. This is NOT to be used to represent which row a key is placed in its
+  // layout.
+  optional int32 row = 11;
+
+  // Indicates whether a keycap is narrower than its base.
+  optional bool stepped = 12;
+
+  // A multiplier, in case you have more than one of this key. This can be
+  // convenient for describing blank kits.
+  optional int32 repeat = 13;
+}
+
+// The description of the color scheme for a key.
+message KeyColor {
+  // "Alpha", "Mods", whatever descriptor for this group.
+  optional string group_name = 1;
+  optional string background = 2;
+  optional string foreground = 3;
+}
+
+// The description of a set.
+message Set {
+  required string set_name = 1;
+  optional string designer = 2;
+  repeated string url = 3;
+  repeated string manufacturer = 4;
+
+  // A physical description of the key.
+  optional Profile profile = 6;
+  optional Stem stem = 7;
+  optional Material material = 8;
+
+  // A list of the colors for each group of keys.
+  repeated KeyColor scheme = 9;
+}
+
+// A particular kit, such as Base, Mods, Blanks, etc.
+message Kit {
+  // The set that contains this kit.
+  required Set set = 1;
+
+  // The name of this kit.
+  optional string kit_name = 2;
+
+  // The list of keys in this kit.
+  repeated Key key = 3;
+}
+
+message Kits {
+  repeated Kit kit = 1;
+}
+
+
+//
+// Describing matching keyboards.
+//
+
+// A switch's intended keycap geometry.
+message Switch {
+  // The size of the switch's key.
+  required Size size = 1;
+
+  // The intended role for this switch.
+  required string role = 2;
+
+  // The intended row for this switch position. Its default value is set in its
+  // parent cluster.
+  optional Row row = 3;
+}
+
+// A cluster of keys. Switch positions are always define within these
+// containers. This makes it easier to define keyboards because on the vast
+// majority of keyboards the keys are contiguous. If you have isolated clusters
+// of keys or keys with gaps, you should define individual clusters for these. A
+// cluster is always a "row" of contiguous key.
+message Cluster {
+  // Location of the top-left corner of the cluster, in 1/4U units. (0, 0) sits
+  // at the top-left corner of the keyboard; increasing Y does from the top row
+  // to the bottom row.
+  optional int32 x = 1;
+  optional int32 y = 2;
+
+  // The default row the shape of those keys are to be.
+  optional Row row = 3;
+
+  // A list of the switch and roles of this keyboard.
+  repeated Switch switch = 4;
+
+  // True if this cluster is vertical. This is how you insert vertical keys.
+  // Leave unset for regular horizontal clusters.
+  optional bool vertical = 5;
+
+}
+// A description of a keyboard's geometry and intended roles (layout).
+message Keyboard {
+  // The name of the layout of the keyboard.
+  optional string name = 1;
+
+  // The manufacturer of the keyboard.
+  optional string manufacturer = 2;
+
+  // A list of the key clusters.
+  repeated Cluster cluster = 3;
+}

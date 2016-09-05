@@ -1,0 +1,28 @@
+Add direct photo URLs, and pull in the photos for each kit.
+
+Missing data:
+
+# FIXME: colorful keys
+# FIXME: topre keys
+# FIXME: kit sent by madereth
+
+- Create alternatives for keyboards.
+
+- Keyboard descriptions also have to have rows to match. So perhaps split up the
+  row of the key descriptions from their stem, e.g. SA_R2 should be two fields,
+  so that when we check for coverage we can take into account the row as well.
+
+- Keyboard descriptions should have rows, so that they are easier to define.
+  Assume each row moves by the size of its key, instead of having to provide
+  each position.
+
+- Rename Key -> Keycap.
+
+- Keyboard layout name really ought to be called "layout".
+
+- Should we distinguish between keyboards and layouts?
+
+- How do we support the ISO key? What about its geometry? Do we just make it a
+  special beast? Are they always all of the same shape?
+
+- What about vertical keys? What about supporting something like the Ergodox?

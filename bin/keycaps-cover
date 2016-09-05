@@ -1,0 +1,79 @@
+#!/usr/bin/env python3
+"""Check that a set of kits covers a particular keyboard.
+"""
+__author__ = 'Martin Blais <blais@furius.ca>'
+
+import argparse
+import itertools
+import logging
+
+import keycaps
+import keycaps_pb2
+from google.protobuf import text_format
+
+
+def read_keys(filename):
+    kit = keycaps.read_file(filename, keycaps_pb2.Kit)
+    for key in kit.key:
+        if not key.HasField('type'):
+            key.type = kit.set.type
+        yield key
+
+def main():
+    parser = argparse.ArgumentParser(description=__doc__.strip())
+    parser.add_argument('keyboard', help='Keyboard filename')
+    parser.add_argument('kits', nargs='+', help='Filenames of all kits')
+    args = parser.parse_args()
+
+    allkeys = list(itertools.chain.from_iterable(read_keys(filename) for filename in args.kits))
+    # for key in keys:
+    #     print((keycaps_pb2.Size.Name(key.size), key.role))
+
+    # Read the target keyboard file we have to cover.
+    keyboard = keycaps.read_file(args.keyboard, keycaps_pb2.Keyboard)
+
+    # For each switch with a role, try to find a matching key.
+    keys = list(allkeys)
+    matches = []
+    for switch in keyboard.switch:
+        if not switch.role:
+            continue
+        tr = (switch.size, switch.role)
+        for index, key in enumerate(keys):
+            sr = (key.size, key.role)
+            if sr == tr:
+                matches.append((switch, key))
+                del keys[index]
+                break
+        else:
+             logging.error("Could not find key for switch: {}".format(
+                 text_format.MessageToString(switch, as_one_line=True)))
+
+    # For each switch with no role, try to find a matching key.
+    for switch in keyboard.switch:
+        if switch.role:
+            continue
+        tr = (switch.size, switch.role)
+        for index, key in enumerate(keys):
+            sr = (key.size, key.role)
+            if sr == tr:
+                matches.append((switch, key))
+                del keys[index]
+                break
+        else:
+             logging.error("Could not find key for switch: {}".format(
+                 text_format.MessageToString(switch, as_one_line=True)))
+
+    # Print the list of succesfully matched keys.
+    for switch, key in matches:
+        print(text_format.MessageToString(switch, as_one_line=True))
+        print(text_format.MessageToString(key, as_one_line=True))
+        print()
+
+
+## FIXME: Highlight ambiguity / extra choices.
+## FIXME: Make equivalence sets: meta == alt, backspace == delete, allow user to specify.
+
+
+if __name__ == '__main__':
+    main()
