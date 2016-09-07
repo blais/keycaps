@@ -26,3 +26,7 @@ Missing data:
   special beast? Are they always all of the same shape?
 
 - What about vertical keys? What about supporting something like the Ergodox?
+
+- What about Switch brand? Cherry MX vs. Gateron vs. Zealios, vs. others. Do we
+  really care? Nah. Probably an idea to put an option though, if we distinguish
+  the entities of Keyboard and Layout.
