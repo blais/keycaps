@@ -1,10 +1,12 @@
 #!/usr/src/env make
 
-check: src/keycaps_pb2.py
-	src/keycaps-check --kit sets/*/*.pb
-	src/keycaps-check --kbd kbds/*.pb
+PYTHONPATH := $(PYTHONPATH):$(PWD)/keycaps
 
-gen: $(PWD)/src/keycaps_pb2.py
+check: keycaps/keycaps_pb2.py
+	bin/keycaps-check --kit data/sets/*/*.pb
+	bin/keycaps-check --kbd data/layouts/*.pb
 
-$(PWD)/src/keycaps_pb2.py: $(PWD)/src/keycaps.proto
-	protoc -I $(PWD)/src --python_out=$(PWD)/src $<
+gen: keycaps/keycaps_pb2.py
+
+keycaps/keycaps_pb2.py: $(PWD)/keycaps/keycaps.proto
+	protoc -I $(PWD)/keycaps --python_out $(PWD)/keycaps --proto_path $(PWD)/keycaps $<

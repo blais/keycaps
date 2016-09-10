@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 
 def rgb(r, g, b):
-    return hex(r << 16 | g << 8 | b)
+    return '#{:06X}'.format(r << 16 | g << 8 | b)
+
 
 # PBT colors.
 BCT = rgb(0, 117, 173)
@@ -259,3 +260,6 @@ YL = rgb(212, 134, 0)
 YW = rgb(196, 133, 44)
 YY = rgb(248, 204, 42)
 YCAglow = rgb(194, 192, 169)
+
+NEM = rgb(0, 0, 0)
+NDY = rgb(0, 0, 0)
