@@ -104,7 +104,7 @@ key { role: "shift"        text: "SHIFT"                   size: U275 color: "GS
 key { role: "control"      text: "CTRL"                    size: U125 color: "GSM" }
 key {                      text: "DZ"                      size: U125 color: "GSM" }
 key { role: "alt"          text: "ATL"                     size: U125 color: "GSM" }
-key { role: "spacebar"                                                     size: U625X color: "BFU" }
+key { role: "spacebar"                                                     size: U625U color: "BFU" }
 key { role: "alt"          text: "ATL"                     size: U125 color: "GSM" }
 key {                      text: "DZ"                      size: U125 color: "GSM" }
 key {                      text: "DANGER ZONE"             size: U125 color: "GSM" }

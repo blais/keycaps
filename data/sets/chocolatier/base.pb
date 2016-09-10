@@ -85,3 +85,4 @@ key { role: "j"                                  size: U100   color: "TGH" profi
 
 # Spacebar.
 key { role: "spacebar"  size: U625   color: "TGH" profile: SA_R3 }
+# FIXME: Not sure about the spacebar style-- have to confirm upon receipt.

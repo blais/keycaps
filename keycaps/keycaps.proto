@@ -77,13 +77,14 @@ enum Size {
   U275 = 11;
   U300 = 12;
   U600 = 24;  // Stems: [-2u, 0u, +2u]
-  U625 = 25;  // Stems: [-2.625u, 0u, 0.6u, 2.625u]
-  U625X = 26; // Stems: [-2.625u, -2u, 0u, 0.6u, +2u, +2.625u] (Universal)
-  U700 = 27;  // Stems: [-3u, 0u, +3u]
+  U625 = 25;  // Stems: Uncertain / flexible.
+  U625S = 26; // Stems: [-2.625u, 0u, 0.6u, 2.625u] (Standard)
+  U625U = 27; // Stems: [-2.625u, -2u, 0u, 0.6u, +2u, +2.625u] (Universal)
+  U700 = 28;  // Stems: [-3u, 0u, +3u]
 
   // Vertical keys.
-  V200 = 28;
-  VISO = 29;  // The shape of an ISO key.
+  V200 = 29;
+  VISO = 30;  // The shape of an ISO key.
 }
 
 // The homing characteristic of a key.

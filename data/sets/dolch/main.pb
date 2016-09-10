@@ -99,7 +99,7 @@ key { role: "shift"        text: "SHIFT"                   size: U275 color: "GX
 key { role: "control"      text: "CTRL"                    size: U125 color: "GX" }
 key { role: "win"          text: "WIN"                     size: U125 color: "GX" }
 key { role: "alt"          text: "ALT"                     size: U125 color: "GX" }
-key { role: "spacebar"                                                     size: U625 color: "GE" }
+key { role: "spacebar"                                     size: U625S color: "GE" }
 key { role: "alt"          text: "ALT"                     size: U125 color: "GX" }
 key { role: "win"          text: "WIN"                     size: U125 color: "GX" }
 key { role: "menu"         text: "MENU"                    size: U125 color: "GX" }

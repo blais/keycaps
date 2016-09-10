@@ -99,7 +99,7 @@ key { role: "shift"        text: "SHIFT"                   size: U275 color: "RC
 key { role: "control"      text: "CTRL"                    size: U125 color: "RCJ" }
 key { glyph: "flower"                                      size: U125 color: "RCJ" }
 key { role: "alt"          text: "ALT"                     size: U125 color: "RCJ" }
-key { role: "spacebar"                                                     size: U625 color: "WFK" }
+key { role: "spacebar"                                      size: U625S color: "WFK" }
 key { role: "alt"          text: "ALT"                     size: U125 color: "RCJ" }
 key { glyph: "flower"                                      size: U125 color: "RCJ" }
 key { role: "meta"         text: "META"                    size: U125 color: "RCJ" }

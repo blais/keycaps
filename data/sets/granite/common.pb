@@ -94,7 +94,10 @@ key { role: "comma"            text: ", <"                     size: U100   colo
 key { role: "period"            text: ". >"                     size: U100   color: "GKK" }
 key { role: "slash"            text: "/ :"                     size: U100   color: "GKK" }
 
-key { role: "spacebar"                                                     size: U625 color: "GKK" }
+key { role: "spacebar"                                                     size: U625S color: "GKK" }
+
+# Note: They sent me an extra one by mistake after an email about the stabilizer being incorrect.
+key { role: "spacebar"                                                     size: U625S color: "GKK" }
 
 # Arrow keys.
 key { role: "up"                                           size: U100   color: "GDE" }
