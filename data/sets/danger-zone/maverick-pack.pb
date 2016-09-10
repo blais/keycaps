@@ -2,8 +2,14 @@ set {
   set_name: "Danger Zone SA Keycap Set"
   profile: SA_R3
   stem: CHERRY
+  material: ABS
 
-  # ABS colors: BFU (blue), GSM (grey), YY (yellow), RAS (red)
+  color_scheme {
+    group { name: "blue" background: "BFU" }
+    group { name: "grey" background: "GSM" }
+    group { name: "yellow" background: "YY" }
+    group { name: "red" background: "RAS" }
+  }
 }
 
 kit_name: "Maverick Pack"

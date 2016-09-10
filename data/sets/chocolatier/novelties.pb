@@ -3,16 +3,17 @@ set {
   designer: "Zambumon"
   manufacturer: "Signature Plastics"
   material: ABS
+  stem: CHERRY
   url: "https://www.massdrop.com/buy/the-amazing-chocolatier-custom-sa-keycap-set"
 
-  stem: CHERRY
-
-  # Light brown: TGH
-  # Dark brown: TBN
-  # Yellow: YCF
-  # Red: RA
-  # White: WBO
-  # Blue: BDH
+  color_scheme {
+    group { name: "Light brown" background: "TGH" }
+    group { name: "Dark brown" background: "TBN" }
+    group { name: "Yellow" background: "YCF" }
+    group { name: "Red" background: "RA" }
+    group { name: "White" background: "WBO" }
+    group { name: "Blue" background: "BDH" }
+  }
 }
 
 kit_name: "Novelties"

@@ -6,7 +6,7 @@ from os import path
 
 from google.protobuf import text_format
 
-import keycaps_pb2
+from keycaps import keycaps_pb2
 
 
 def read_file(filename, cls=keycaps_pb2.Kit):

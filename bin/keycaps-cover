@@ -7,13 +7,13 @@ import argparse
 import itertools
 import logging
 
-import keycaps
-import keycaps_pb2
+from keycaps import keyio
+from keycaps import keycaps_pb2
 from google.protobuf import text_format
 
 
 def read_keys(filename):
-    kit = keycaps.read_file(filename, keycaps_pb2.Kit)
+    kit = keyio.read_file(filename, keycaps_pb2.Kit)
     for key in kit.key:
         if not key.HasField('type'):
             key.type = kit.set.type
@@ -30,7 +30,7 @@ def main():
     #     print((keycaps_pb2.Size.Name(key.size), key.role))
 
     # Read the target keyboard file we have to cover.
-    keyboard = keycaps.read_file(args.keyboard, keycaps_pb2.Keyboard)
+    keyboard = keyio.read_file(args.keyboard, keycaps_pb2.Keyboard)
 
     # For each switch with a role, try to find a matching key.
     keys = list(allkeys)

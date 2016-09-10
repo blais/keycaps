@@ -2,6 +2,12 @@ set {
   set_name: "Hana DSA Custom Keycap Set"
   profile: DSA
   stem: CHERRY
+
+  color_scheme {
+    group { name: "Pink" background: "RCS" }
+    group { name: "Purple" background: "RCJ" }
+    group { name: "White" background: "WFK" }
+  }
 }
 
 kit_name: "Blank Kit #1"

@@ -5,8 +5,8 @@ __author__ = 'Martin Blais <blais@furius.ca>'
 
 import argparse
 
-import keycaps
-import keycaps_pb2
+from keycaps import keyio
+from keycaps import keycaps_pb2
 
 
 def main():
@@ -23,7 +23,7 @@ def main():
 
     for filename in args.filenames:
         print("Checking %s" % filename)
-        kits = keycaps.read_file(filename, cls)
+        kits = keyio.read_file(filename, cls)
 
 
 if __name__ == '__main__':

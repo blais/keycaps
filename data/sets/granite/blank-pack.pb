@@ -4,14 +4,16 @@ set {
   profile: DSA
   stem: CHERRY
 
-  # ALPHA (Light Gray) : GKK
-  # MODS (Medium Gray) : GDE
-  # RED : RBH
-  # GREEN : VAZ
-  # BLUE : BCT
-  # YELLOW : YR
-  # ORANGE: OBB
-  # Dark Gray: GQT
+  color_scheme {
+    group { name: "Alpha (Light Gray)" background: "GKK" }
+    group { name: "Mods (Medium Gray)" background: "GDE" }
+    group { name: "Red" background: "RBH" }
+    group { name: "Green" background: "VAZ" }
+    group { name: "Blue" background: "BCT" }
+    group { name: "Yellow" background: "YR" }
+    group { name: "Orange" background: "OBB" }
+    group { name: "Dark Gray" background: "GQT" }
+  }
 }
 
 kit_name: "Blank Pack"

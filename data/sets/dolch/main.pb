@@ -2,9 +2,7 @@ set {
   set_name: "DSA \"Dolch\" Keycap Set"
   profile: DSA
   stem: CHERRY
-
   material: ABS
-  stem: CHERRY
 
   color_scheme {
     group { name: "Lighter gray" background: "GE" }

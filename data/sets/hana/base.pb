@@ -2,12 +2,15 @@ set {
   set_name: "Hana DSA Custom Keycap Set"
   stem: CHERRY
   profile: DSA
+
+  color_scheme {
+    group { name: "Pink" background: "RCS" }
+    group { name: "Purple" background: "RCJ" }
+    group { name: "White" background: "WFK" }
+  }
 }
 
 kit_name: "Main set"
-
-# Colors: RCS (pink), RCJ (purple), WFK (white)
-
 
 # Function keys row.
 key { role: "escape"       text: "ESC"                     size: U100   color: "RCS" }
