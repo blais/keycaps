@@ -86,17 +86,14 @@ key { role: "j"                                            size: U100   color: "
 key { role: "z"                                            size: U100   color: "GKK" }
 key { role: "x"                                            size: U100   color: "GKK" }
 key { role: "c"                                            size: U100   color: "GKK" }
-key { role: "v"                                            size: U100   color: "GKK" homing: DEEP }
+key { role: "v"                                            size: U100   color: "GKK" }
 key { role: "b"                                            size: U100   color: "GKK" }
 key { role: "n"                                            size: U100   color: "GKK" }
 key { role: "m"                                            size: U100   color: "GKK" }
-key { role: "comma"            text: ", <"                     size: U100   color: "GKK" homing: DEEP }
+key { role: "comma"            text: ", <"                     size: U100   color: "GKK" }
 key { role: "period"            text: ". >"                     size: U100   color: "GKK" }
 key { role: "slash"            text: "/ :"                     size: U100   color: "GKK" }
 
-key { role: "spacebar"                                                     size: U625S color: "GKK" }
-
-# Note: They sent me an extra one by mistake after an email about the stabilizer being incorrect.
 key { role: "spacebar"                                                     size: U625S color: "GKK" }
 
 # Arrow keys.
