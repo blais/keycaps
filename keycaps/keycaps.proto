@@ -138,11 +138,16 @@ message Key {
 }
 
 // The description of the color scheme for a key.
-message KeyColor {
+message ColorGroup {
   // "Alpha", "Mods", whatever descriptor for this group.
-  optional string group_name = 1;
+  optional string name = 1;
   optional string background = 2;
   optional string foreground = 3;
+}
+
+message ColorScheme {
+  // A list of the key color groups.
+  repeated ColorGroup group = 9;
 }
 
 // The description of a set.
@@ -158,7 +163,7 @@ message Set {
   optional Material material = 8;
 
   // A list of the colors for each group of keys.
-  repeated KeyColor scheme = 9;
+  optional ColorScheme color_scheme = 9;
 }
 
 // A particular kit, such as Base, Mods, Blanks, etc.

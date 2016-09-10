@@ -2,11 +2,15 @@ set {
   set_name: "DSA \"Dolch\" Keycap Set"
   profile: DSA
   stem: CHERRY
+
+  material: ABS
+  stem: CHERRY
+
+  color_scheme {
+    group { name: "Lighter gray" background: "GE" }
+    group { name: "Darker gray" background: "GX" }
+  }
 }
-
-
-# Keycaps are DSA Family, doubleshot ABS to fit the Cherry MX keycap switch.
-# Colors: GE (lighter gray) and GX (darker gray)
 
 kit_name: "Main set"
 

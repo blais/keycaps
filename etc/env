@@ -1,0 +1,7 @@
+#!/bin/sh
+# My personal environment initialization for this project. This file is executed
+# automatically by my shell initialization framework from my projects directory.
+# Note to packagers: this file is useless to anyone but me, the author.
+
+USERPATH=$USERPATH:$PROJDIR/bin
+PYTHONPATH=$PYTHONPATH:$PROJDIR/keycaps

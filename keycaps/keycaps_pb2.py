@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='keycaps.proto',
   package='',
   syntax='proto2',
-  serialized_pb=_b('\n\rkeycaps.proto\"\xfc\x01\n\x03Key\x12\x19\n\x07profile\x18\x01 \x02(\x0e\x32\x08.Profile\x12\x13\n\x04stem\x18\x02 \x02(\x0e\x32\x05.Stem\x12\x1b\n\x08material\x18\x03 \x02(\x0e\x32\t.Material\x12\x13\n\x04size\x18\x04 \x02(\x0e\x32\x05.Size\x12\x0c\n\x04role\x18\x05 \x01(\t\x12\x0c\n\x04text\x18\x06 \x01(\t\x12\r\n\x05glyph\x18\x07 \x01(\t\x12\r\n\x05\x63olor\x18\x08 \x01(\t\x12\x12\n\ncolor_fore\x18\t \x01(\t\x12\x17\n\x06homing\x18\n \x01(\x0e\x32\x07.Homing\x12\x0b\n\x03row\x18\x0b \x01(\x05\x12\x0f\n\x07stepped\x18\x0c \x01(\x08\x12\x0e\n\x06repeat\x18\r \x01(\x05\"F\n\x08KeyColor\x12\x12\n\ngroup_name\x18\x01 \x01(\t\x12\x12\n\nbackground\x18\x02 \x01(\t\x12\x12\n\nforeground\x18\x03 \x01(\t\"\xb4\x01\n\x03Set\x12\x10\n\x08set_name\x18\x01 \x02(\t\x12\x10\n\x08\x64\x65signer\x18\x02 \x01(\t\x12\x0b\n\x03url\x18\x03 \x03(\t\x12\x14\n\x0cmanufacturer\x18\x04 \x03(\t\x12\x19\n\x07profile\x18\x06 \x01(\x0e\x32\x08.Profile\x12\x13\n\x04stem\x18\x07 \x01(\x0e\x32\x05.Stem\x12\x1b\n\x08material\x18\x08 \x01(\x0e\x32\t.Material\x12\x19\n\x06scheme\x18\t \x03(\x0b\x32\t.KeyColor\"=\n\x03Kit\x12\x11\n\x03set\x18\x01 \x02(\x0b\x32\x04.Set\x12\x10\n\x08kit_name\x18\x02 \x01(\t\x12\x11\n\x03key\x18\x03 \x03(\x0b\x32\x04.Key\"\x19\n\x04Kits\x12\x11\n\x03kit\x18\x01 \x03(\x0b\x32\x04.Kit\">\n\x06Switch\x12\x13\n\x04size\x18\x01 \x02(\x0e\x32\x05.Size\x12\x0c\n\x04role\x18\x02 \x02(\t\x12\x11\n\x03row\x18\x03 \x01(\x0e\x32\x04.Row\"]\n\x07\x43luster\x12\t\n\x01x\x18\x01 \x01(\x05\x12\t\n\x01y\x18\x02 \x01(\x05\x12\x11\n\x03row\x18\x03 \x01(\x0e\x32\x04.Row\x12\x17\n\x06switch\x18\x04 \x03(\x0b\x32\x07.Switch\x12\x10\n\x08vertical\x18\x05 \x01(\x08\"I\n\x08Keyboard\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x14\n\x0cmanufacturer\x18\x02 \x01(\t\x12\x19\n\x07\x63luster\x18\x03 \x03(\x0b\x32\x08.Cluster*\xe6\x01\n\x07Profile\x12\x07\n\x03\x44SA\x10\x00\x12\t\n\x05SA_R1\x10\x01\x12\t\n\x05SA_R2\x10\x02\x12\t\n\x05SA_R3\x10\x03\x12\t\n\x05SA_R4\x10\x04\x12\t\n\x05SS_R1\x10\x05\x12\t\n\x05SS_R2\x10\x06\x12\t\n\x05SS_R3\x10\x07\x12\t\n\x05SS_R4\x10\x08\x12\n\n\x06\x44SS_R1\x10\t\x12\n\n\x06\x44SS_R2\x10\n\x12\n\n\x06\x44SS_R3\x10\x0b\x12\n\n\x06\x44SS_R4\x10\x0c\x12\n\n\x06\x44\x43S_R1\x10\r\x12\n\n\x06\x44\x43S_R2\x10\x0e\x12\n\n\x06\x44\x43S_R3\x10\x0f\x12\n\n\x06\x44\x43S_R4\x10\x10\x12\n\n\x06\x44\x43S_R5\x10\x11\x12\x06\n\x02LP\x10\x12\x12\x06\n\x02KT\x10\x13*-\n\x03Row\x12\x06\n\x02R1\x10\x01\x12\x06\n\x02R2\x10\x02\x12\x06\n\x02R3\x10\x03\x12\x06\n\x02R4\x10\x04\x12\x06\n\x02R5\x10\x05*\'\n\x04Stem\x12\n\n\x06\x43HERRY\x10\x00\x12\x08\n\x04\x41LPS\x10\x01\x12\t\n\x05TOPRE\x10\x02*A\n\x08Material\x12\x07\n\x03\x41\x42S\x10\x00\x12\x07\n\x03PBT\x10\x01\x12\x06\n\x02PC\x10\x02\x12\x07\n\x03POM\x10\x03\x12\x07\n\x03PVC\x10\x04\x12\t\n\x05OTHER\x10\x05*\x9d\x01\n\x04Size\x12\x08\n\x04U100\x10\x04\x12\x08\n\x04U125\x10\x05\x12\x08\n\x04U150\x10\x06\x12\x08\n\x04U175\x10\x07\x12\x08\n\x04U200\x10\x08\x12\x08\n\x04U225\x10\t\x12\x08\n\x04U250\x10\n\x12\x08\n\x04U275\x10\x0b\x12\x08\n\x04U300\x10\x0c\x12\x08\n\x04U600\x10\x18\x12\x08\n\x04U625\x10\x19\x12\t\n\x05U625X\x10\x1a\x12\x08\n\x04U700\x10\x1b\x12\x08\n\x04V200\x10\x1c\x12\x08\n\x04VISO\x10\x1d*\x1c\n\x06Homing\x12\x08\n\x04\x42UMP\x10\x00\x12\x08\n\x04\x44\x45\x45P\x10\x01')
+  serialized_pb=_b('\n\rkeycaps.proto\"\xfc\x01\n\x03Key\x12\x19\n\x07profile\x18\x01 \x02(\x0e\x32\x08.Profile\x12\x13\n\x04stem\x18\x02 \x02(\x0e\x32\x05.Stem\x12\x1b\n\x08material\x18\x03 \x02(\x0e\x32\t.Material\x12\x13\n\x04size\x18\x04 \x02(\x0e\x32\x05.Size\x12\x0c\n\x04role\x18\x05 \x01(\t\x12\x0c\n\x04text\x18\x06 \x01(\t\x12\r\n\x05glyph\x18\x07 \x01(\t\x12\r\n\x05\x63olor\x18\x08 \x01(\t\x12\x12\n\ncolor_fore\x18\t \x01(\t\x12\x17\n\x06homing\x18\n \x01(\x0e\x32\x07.Homing\x12\x0b\n\x03row\x18\x0b \x01(\x05\x12\x0f\n\x07stepped\x18\x0c \x01(\x08\x12\x0e\n\x06repeat\x18\r \x01(\x05\"B\n\nColorGroup\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x12\n\nbackground\x18\x02 \x01(\t\x12\x12\n\nforeground\x18\x03 \x01(\t\")\n\x0b\x43olorScheme\x12\x1a\n\x05group\x18\t \x03(\x0b\x32\x0b.ColorGroup\"\xbd\x01\n\x03Set\x12\x10\n\x08set_name\x18\x01 \x02(\t\x12\x10\n\x08\x64\x65signer\x18\x02 \x01(\t\x12\x0b\n\x03url\x18\x03 \x03(\t\x12\x14\n\x0cmanufacturer\x18\x04 \x03(\t\x12\x19\n\x07profile\x18\x06 \x01(\x0e\x32\x08.Profile\x12\x13\n\x04stem\x18\x07 \x01(\x0e\x32\x05.Stem\x12\x1b\n\x08material\x18\x08 \x01(\x0e\x32\t.Material\x12\"\n\x0c\x63olor_scheme\x18\t \x01(\x0b\x32\x0c.ColorScheme\"=\n\x03Kit\x12\x11\n\x03set\x18\x01 \x02(\x0b\x32\x04.Set\x12\x10\n\x08kit_name\x18\x02 \x01(\t\x12\x11\n\x03key\x18\x03 \x03(\x0b\x32\x04.Key\"\x19\n\x04Kits\x12\x11\n\x03kit\x18\x01 \x03(\x0b\x32\x04.Kit\">\n\x06Switch\x12\x13\n\x04size\x18\x01 \x02(\x0e\x32\x05.Size\x12\x0c\n\x04role\x18\x02 \x02(\t\x12\x11\n\x03row\x18\x03 \x01(\x0e\x32\x04.Row\"]\n\x07\x43luster\x12\t\n\x01x\x18\x01 \x01(\x05\x12\t\n\x01y\x18\x02 \x01(\x05\x12\x11\n\x03row\x18\x03 \x01(\x0e\x32\x04.Row\x12\x17\n\x06switch\x18\x04 \x03(\x0b\x32\x07.Switch\x12\x10\n\x08vertical\x18\x05 \x01(\x08\"I\n\x08Keyboard\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x14\n\x0cmanufacturer\x18\x02 \x01(\t\x12\x19\n\x07\x63luster\x18\x03 \x03(\x0b\x32\x08.Cluster*\xe6\x01\n\x07Profile\x12\x07\n\x03\x44SA\x10\x00\x12\t\n\x05SA_R1\x10\x01\x12\t\n\x05SA_R2\x10\x02\x12\t\n\x05SA_R3\x10\x03\x12\t\n\x05SA_R4\x10\x04\x12\t\n\x05SS_R1\x10\x05\x12\t\n\x05SS_R2\x10\x06\x12\t\n\x05SS_R3\x10\x07\x12\t\n\x05SS_R4\x10\x08\x12\n\n\x06\x44SS_R1\x10\t\x12\n\n\x06\x44SS_R2\x10\n\x12\n\n\x06\x44SS_R3\x10\x0b\x12\n\n\x06\x44SS_R4\x10\x0c\x12\n\n\x06\x44\x43S_R1\x10\r\x12\n\n\x06\x44\x43S_R2\x10\x0e\x12\n\n\x06\x44\x43S_R3\x10\x0f\x12\n\n\x06\x44\x43S_R4\x10\x10\x12\n\n\x06\x44\x43S_R5\x10\x11\x12\x06\n\x02LP\x10\x12\x12\x06\n\x02KT\x10\x13*-\n\x03Row\x12\x06\n\x02R1\x10\x01\x12\x06\n\x02R2\x10\x02\x12\x06\n\x02R3\x10\x03\x12\x06\n\x02R4\x10\x04\x12\x06\n\x02R5\x10\x05*\'\n\x04Stem\x12\n\n\x06\x43HERRY\x10\x00\x12\x08\n\x04\x41LPS\x10\x01\x12\t\n\x05TOPRE\x10\x02*A\n\x08Material\x12\x07\n\x03\x41\x42S\x10\x00\x12\x07\n\x03PBT\x10\x01\x12\x06\n\x02PC\x10\x02\x12\x07\n\x03POM\x10\x03\x12\x07\n\x03PVC\x10\x04\x12\t\n\x05OTHER\x10\x05*\x9d\x01\n\x04Size\x12\x08\n\x04U100\x10\x04\x12\x08\n\x04U125\x10\x05\x12\x08\n\x04U150\x10\x06\x12\x08\n\x04U175\x10\x07\x12\x08\n\x04U200\x10\x08\x12\x08\n\x04U225\x10\t\x12\x08\n\x04U250\x10\n\x12\x08\n\x04U275\x10\x0b\x12\x08\n\x04U300\x10\x0c\x12\x08\n\x04U600\x10\x18\x12\x08\n\x04U625\x10\x19\x12\t\n\x05U625X\x10\x1a\x12\x08\n\x04U700\x10\x1b\x12\x08\n\x04V200\x10\x1c\x12\x08\n\x04VISO\x10\x1d*\x1c\n\x06Homing\x12\x08\n\x04\x42UMP\x10\x00\x12\x08\n\x04\x44\x45\x45P\x10\x01')
 )
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
@@ -113,8 +113,8 @@ _PROFILE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=852,
-  serialized_end=1082,
+  serialized_start=900,
+  serialized_end=1130,
 )
 _sym_db.RegisterEnumDescriptor(_PROFILE)
 
@@ -148,8 +148,8 @@ _ROW = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=1084,
-  serialized_end=1129,
+  serialized_start=1132,
+  serialized_end=1177,
 )
 _sym_db.RegisterEnumDescriptor(_ROW)
 
@@ -175,8 +175,8 @@ _STEM = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=1131,
-  serialized_end=1170,
+  serialized_start=1179,
+  serialized_end=1218,
 )
 _sym_db.RegisterEnumDescriptor(_STEM)
 
@@ -214,8 +214,8 @@ _MATERIAL = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=1172,
-  serialized_end=1237,
+  serialized_start=1220,
+  serialized_end=1285,
 )
 _sym_db.RegisterEnumDescriptor(_MATERIAL)
 
@@ -289,8 +289,8 @@ _SIZE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=1240,
-  serialized_end=1397,
+  serialized_start=1288,
+  serialized_end=1445,
 )
 _sym_db.RegisterEnumDescriptor(_SIZE)
 
@@ -312,8 +312,8 @@ _HOMING = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=1399,
-  serialized_end=1427,
+  serialized_start=1447,
+  serialized_end=1475,
 )
 _sym_db.RegisterEnumDescriptor(_HOMING)
 
@@ -487,29 +487,29 @@ _KEY = _descriptor.Descriptor(
 )
 
 
-_KEYCOLOR = _descriptor.Descriptor(
-  name='KeyColor',
-  full_name='KeyColor',
+_COLORGROUP = _descriptor.Descriptor(
+  name='ColorGroup',
+  full_name='ColorGroup',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='group_name', full_name='KeyColor.group_name', index=0,
+      name='name', full_name='ColorGroup.name', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='background', full_name='KeyColor.background', index=1,
+      name='background', full_name='ColorGroup.background', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='foreground', full_name='KeyColor.foreground', index=2,
+      name='foreground', full_name='ColorGroup.foreground', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -528,7 +528,38 @@ _KEYCOLOR = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=272,
-  serialized_end=342,
+  serialized_end=338,
+)
+
+
+_COLORSCHEME = _descriptor.Descriptor(
+  name='ColorScheme',
+  full_name='ColorScheme',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='group', full_name='ColorScheme.group', index=0,
+      number=9, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  syntax='proto2',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=340,
+  serialized_end=381,
 )
 
 
@@ -589,9 +620,9 @@ _SET = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='scheme', full_name='Set.scheme', index=7,
-      number=9, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
+      name='color_scheme', full_name='Set.color_scheme', index=7,
+      number=9, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
@@ -607,8 +638,8 @@ _SET = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=345,
-  serialized_end=525,
+  serialized_start=384,
+  serialized_end=573,
 )
 
 
@@ -652,8 +683,8 @@ _KIT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=527,
-  serialized_end=588,
+  serialized_start=575,
+  serialized_end=636,
 )
 
 
@@ -683,8 +714,8 @@ _KITS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=590,
-  serialized_end=615,
+  serialized_start=638,
+  serialized_end=663,
 )
 
 
@@ -728,8 +759,8 @@ _SWITCH = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=617,
-  serialized_end=679,
+  serialized_start=665,
+  serialized_end=727,
 )
 
 
@@ -787,8 +818,8 @@ _CLUSTER = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=681,
-  serialized_end=774,
+  serialized_start=729,
+  serialized_end=822,
 )
 
 
@@ -832,8 +863,8 @@ _KEYBOARD = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=776,
-  serialized_end=849,
+  serialized_start=824,
+  serialized_end=897,
 )
 
 _KEY.fields_by_name['profile'].enum_type = _PROFILE
@@ -841,10 +872,11 @@ _KEY.fields_by_name['stem'].enum_type = _STEM
 _KEY.fields_by_name['material'].enum_type = _MATERIAL
 _KEY.fields_by_name['size'].enum_type = _SIZE
 _KEY.fields_by_name['homing'].enum_type = _HOMING
+_COLORSCHEME.fields_by_name['group'].message_type = _COLORGROUP
 _SET.fields_by_name['profile'].enum_type = _PROFILE
 _SET.fields_by_name['stem'].enum_type = _STEM
 _SET.fields_by_name['material'].enum_type = _MATERIAL
-_SET.fields_by_name['scheme'].message_type = _KEYCOLOR
+_SET.fields_by_name['color_scheme'].message_type = _COLORSCHEME
 _KIT.fields_by_name['set'].message_type = _SET
 _KIT.fields_by_name['key'].message_type = _KEY
 _KITS.fields_by_name['kit'].message_type = _KIT
@@ -854,7 +886,8 @@ _CLUSTER.fields_by_name['row'].enum_type = _ROW
 _CLUSTER.fields_by_name['switch'].message_type = _SWITCH
 _KEYBOARD.fields_by_name['cluster'].message_type = _CLUSTER
 DESCRIPTOR.message_types_by_name['Key'] = _KEY
-DESCRIPTOR.message_types_by_name['KeyColor'] = _KEYCOLOR
+DESCRIPTOR.message_types_by_name['ColorGroup'] = _COLORGROUP
+DESCRIPTOR.message_types_by_name['ColorScheme'] = _COLORSCHEME
 DESCRIPTOR.message_types_by_name['Set'] = _SET
 DESCRIPTOR.message_types_by_name['Kit'] = _KIT
 DESCRIPTOR.message_types_by_name['Kits'] = _KITS
@@ -875,12 +908,19 @@ Key = _reflection.GeneratedProtocolMessageType('Key', (_message.Message,), dict(
   ))
 _sym_db.RegisterMessage(Key)
 
-KeyColor = _reflection.GeneratedProtocolMessageType('KeyColor', (_message.Message,), dict(
-  DESCRIPTOR = _KEYCOLOR,
+ColorGroup = _reflection.GeneratedProtocolMessageType('ColorGroup', (_message.Message,), dict(
+  DESCRIPTOR = _COLORGROUP,
   __module__ = 'keycaps_pb2'
-  # @@protoc_insertion_point(class_scope:KeyColor)
+  # @@protoc_insertion_point(class_scope:ColorGroup)
   ))
-_sym_db.RegisterMessage(KeyColor)
+_sym_db.RegisterMessage(ColorGroup)
+
+ColorScheme = _reflection.GeneratedProtocolMessageType('ColorScheme', (_message.Message,), dict(
+  DESCRIPTOR = _COLORSCHEME,
+  __module__ = 'keycaps_pb2'
+  # @@protoc_insertion_point(class_scope:ColorScheme)
+  ))
+_sym_db.RegisterMessage(ColorScheme)
 
 Set = _reflection.GeneratedProtocolMessageType('Set', (_message.Message,), dict(
   DESCRIPTOR = _SET,

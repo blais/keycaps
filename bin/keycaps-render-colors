@@ -7,8 +7,11 @@ import argparse
 import io
 import logging
 import sys
+from os import path
 
+import keycaps
 from keycaps import colors
+from keycaps import keycaps
 
 
 TEMPLATE = '''
@@ -36,12 +39,25 @@ TEMPLATE = '''
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__.strip())
-    parser.add_argument('codes', nargs='+', help='A list of color codes')
+    parser.add_argument('codes', nargs='+', help='A list of color codes or Kit filenames')
     args = parser.parse_args()
-
+    
+    # Parse arguments as either filenames or Signature Plastics color codes directly.
+    codes = []
+    for arg in args.codes:
+        if not path.exists(arg):
+            codes.append(arg)
+        else:
+            kit = keycaps.read_file(arg)
+            scheme = kit.set.color_scheme
+            if scheme:
+                for group in scheme.group:
+                    if group.background:
+                        codes.append(group.background)
+                
     style = io.StringIO()
     body = io.StringIO()
-    for code in args.codes:
+    for code in codes:
         color = getattr(colors, code, None)
         if color is None:
             logging.warning("Color code '%s' could not be found", code)
