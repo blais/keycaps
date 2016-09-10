@@ -35,6 +35,8 @@ enum Profile {
   LP = 18;
 
   KT = 19;
+
+  OEM = 20;
 }
 
 // A particular subgeometry for the profile of a key. Keys in some designs (e.g,
