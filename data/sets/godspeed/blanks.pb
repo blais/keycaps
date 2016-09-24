@@ -7,9 +7,12 @@ set {
   profile: SA
 
   color_scheme {
-    group { name: "Light Gray" background: "" }
-    group { name: "Light Blue" background: "" }
-    group { name: "Light Yellow" background: "" }
+    group { name: "Light Gray"   background: "WBO" }
+    group { name: "Light Blue"   background: "BFJ" }
+    group { name: "Light Yellow" background: "YCE" }
+    group { name: "Red"          background: "RA" }
+    group { name: "Cyan"         background: "VCO" }
+    group { name: "Medium Gray"  background: "GTD" }
   }
 }
 
