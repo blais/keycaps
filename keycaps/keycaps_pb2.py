@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='keycaps.proto',
   package='',
   syntax='proto2',
-  serialized_pb=_b('\n\rkeycaps.proto\"\xfc\x01\n\x03Key\x12\x19\n\x07profile\x18\x01 \x02(\x0e\x32\x08.Profile\x12\x13\n\x04stem\x18\x02 \x02(\x0e\x32\x05.Stem\x12\x1b\n\x08material\x18\x03 \x02(\x0e\x32\t.Material\x12\x13\n\x04size\x18\x04 \x02(\x0e\x32\x05.Size\x12\x0c\n\x04role\x18\x05 \x01(\t\x12\x0c\n\x04text\x18\x06 \x01(\t\x12\r\n\x05glyph\x18\x07 \x01(\t\x12\r\n\x05\x63olor\x18\x08 \x01(\t\x12\x12\n\ncolor_fore\x18\t \x01(\t\x12\x17\n\x06homing\x18\n \x01(\x0e\x32\x07.Homing\x12\x0b\n\x03row\x18\x0b \x01(\x05\x12\x0f\n\x07stepped\x18\x0c \x01(\x08\x12\x0e\n\x06repeat\x18\r \x01(\x05\"B\n\nColorGroup\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x12\n\nbackground\x18\x02 \x01(\t\x12\x12\n\nforeground\x18\x03 \x01(\t\")\n\x0b\x43olorScheme\x12\x1a\n\x05group\x18\t \x03(\x0b\x32\x0b.ColorGroup\"\xbd\x01\n\x03Set\x12\x10\n\x08set_name\x18\x01 \x02(\t\x12\x10\n\x08\x64\x65signer\x18\x02 \x01(\t\x12\x0b\n\x03url\x18\x03 \x03(\t\x12\x14\n\x0cmanufacturer\x18\x04 \x03(\t\x12\x19\n\x07profile\x18\x06 \x01(\x0e\x32\x08.Profile\x12\x13\n\x04stem\x18\x07 \x01(\x0e\x32\x05.Stem\x12\x1b\n\x08material\x18\x08 \x01(\x0e\x32\t.Material\x12\"\n\x0c\x63olor_scheme\x18\t \x01(\x0b\x32\x0c.ColorScheme\"=\n\x03Kit\x12\x11\n\x03set\x18\x01 \x02(\x0b\x32\x04.Set\x12\x10\n\x08kit_name\x18\x02 \x01(\t\x12\x11\n\x03key\x18\x03 \x03(\x0b\x32\x04.Key\"\x19\n\x04Kits\x12\x11\n\x03kit\x18\x01 \x03(\x0b\x32\x04.Kit\">\n\x06Switch\x12\x13\n\x04size\x18\x01 \x02(\x0e\x32\x05.Size\x12\x0c\n\x04role\x18\x02 \x02(\t\x12\x11\n\x03row\x18\x03 \x01(\x0e\x32\x04.Row\"]\n\x07\x43luster\x12\t\n\x01x\x18\x01 \x01(\x05\x12\t\n\x01y\x18\x02 \x01(\x05\x12\x11\n\x03row\x18\x03 \x01(\x0e\x32\x04.Row\x12\x17\n\x06switch\x18\x04 \x03(\x0b\x32\x07.Switch\x12\x10\n\x08vertical\x18\x05 \x01(\x08\"I\n\x08Keyboard\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x14\n\x0cmanufacturer\x18\x02 \x01(\t\x12\x19\n\x07\x63luster\x18\x03 \x03(\x0b\x32\x08.Cluster*\xf7\x01\n\x07Profile\x12\x07\n\x03\x44SA\x10\x00\x12\x06\n\x02SA\x10\x15\x12\t\n\x05SA_R1\x10\x01\x12\t\n\x05SA_R2\x10\x02\x12\t\n\x05SA_R3\x10\x03\x12\t\n\x05SA_R4\x10\x04\x12\t\n\x05SS_R1\x10\x05\x12\t\n\x05SS_R2\x10\x06\x12\t\n\x05SS_R3\x10\x07\x12\t\n\x05SS_R4\x10\x08\x12\n\n\x06\x44SS_R1\x10\t\x12\n\n\x06\x44SS_R2\x10\n\x12\n\n\x06\x44SS_R3\x10\x0b\x12\n\n\x06\x44SS_R4\x10\x0c\x12\n\n\x06\x44\x43S_R1\x10\r\x12\n\n\x06\x44\x43S_R2\x10\x0e\x12\n\n\x06\x44\x43S_R3\x10\x0f\x12\n\n\x06\x44\x43S_R4\x10\x10\x12\n\n\x06\x44\x43S_R5\x10\x11\x12\x06\n\x02LP\x10\x12\x12\x06\n\x02KT\x10\x13\x12\x07\n\x03OEM\x10\x14*-\n\x03Row\x12\x06\n\x02R1\x10\x01\x12\x06\n\x02R2\x10\x02\x12\x06\n\x02R3\x10\x03\x12\x06\n\x02R4\x10\x04\x12\x06\n\x02R5\x10\x05*\'\n\x04Stem\x12\n\n\x06\x43HERRY\x10\x00\x12\x08\n\x04\x41LPS\x10\x01\x12\t\n\x05TOPRE\x10\x02*A\n\x08Material\x12\x07\n\x03\x41\x42S\x10\x00\x12\x07\n\x03PBT\x10\x01\x12\x06\n\x02PC\x10\x02\x12\x07\n\x03POM\x10\x03\x12\x07\n\x03PVC\x10\x04\x12\t\n\x05OTHER\x10\x05*\xa8\x01\n\x04Size\x12\x08\n\x04U100\x10\x04\x12\x08\n\x04U125\x10\x05\x12\x08\n\x04U150\x10\x06\x12\x08\n\x04U175\x10\x07\x12\x08\n\x04U200\x10\x08\x12\x08\n\x04U225\x10\t\x12\x08\n\x04U250\x10\n\x12\x08\n\x04U275\x10\x0b\x12\x08\n\x04U300\x10\x0c\x12\x08\n\x04U600\x10\x18\x12\x08\n\x04U625\x10\x19\x12\t\n\x05U625S\x10\x1a\x12\t\n\x05U625U\x10\x1b\x12\x08\n\x04U700\x10\x1c\x12\x08\n\x04V200\x10\x1d\x12\x08\n\x04VISO\x10\x1e*\x1c\n\x06Homing\x12\x08\n\x04\x42UMP\x10\x00\x12\x08\n\x04\x44\x45\x45P\x10\x01')
+  serialized_pb=_b('\n\rkeycaps.proto\"\xff\x01\n\x06Keycap\x12\x19\n\x07profile\x18\x01 \x02(\x0e\x32\x08.Profile\x12\x13\n\x04stem\x18\x02 \x02(\x0e\x32\x05.Stem\x12\x1b\n\x08material\x18\x03 \x02(\x0e\x32\t.Material\x12\x13\n\x04size\x18\x04 \x02(\x0e\x32\x05.Size\x12\x0c\n\x04role\x18\x05 \x01(\t\x12\x0c\n\x04text\x18\x06 \x01(\t\x12\r\n\x05glyph\x18\x07 \x01(\t\x12\r\n\x05\x63olor\x18\x08 \x01(\t\x12\x12\n\ncolor_fore\x18\t \x01(\t\x12\x17\n\x06homing\x18\n \x01(\x0e\x32\x07.Homing\x12\x0b\n\x03row\x18\x0b \x01(\x05\x12\x0f\n\x07stepped\x18\x0c \x01(\x08\x12\x0e\n\x06repeat\x18\r \x01(\x05\"B\n\nColorGroup\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x12\n\nbackground\x18\x02 \x01(\t\x12\x12\n\nforeground\x18\x03 \x01(\t\")\n\x0b\x43olorScheme\x12\x1a\n\x05group\x18\t \x03(\x0b\x32\x0b.ColorGroup\"\xbd\x01\n\x03Set\x12\x10\n\x08set_name\x18\x01 \x02(\t\x12\x10\n\x08\x64\x65signer\x18\x02 \x01(\t\x12\x0b\n\x03url\x18\x03 \x03(\t\x12\x14\n\x0cmanufacturer\x18\x04 \x03(\t\x12\x19\n\x07profile\x18\x06 \x01(\x0e\x32\x08.Profile\x12\x13\n\x04stem\x18\x07 \x01(\x0e\x32\x05.Stem\x12\x1b\n\x08material\x18\x08 \x01(\x0e\x32\t.Material\x12\"\n\x0c\x63olor_scheme\x18\t \x01(\x0b\x32\x0c.ColorScheme\"@\n\x03Kit\x12\x11\n\x03set\x18\x01 \x02(\x0b\x32\x04.Set\x12\x10\n\x08kit_name\x18\x02 \x01(\t\x12\x14\n\x03\x63\x61p\x18\x03 \x03(\x0b\x32\x07.Keycap\"\x19\n\x04Kits\x12\x11\n\x03kit\x18\x01 \x03(\x0b\x32\x04.Kit\"T\n\x06Switch\x12\x13\n\x04size\x18\x01 \x02(\x0e\x32\x05.Size\x12\x0c\n\x04role\x18\x02 \x02(\t\x12\x11\n\x03row\x18\x03 \x01(\x0e\x32\x04.Row\x12\t\n\x01x\x18\x04 \x01(\x05\x12\t\n\x01y\x18\x05 \x01(\x05\"]\n\x07\x43luster\x12\t\n\x01x\x18\x01 \x01(\x05\x12\t\n\x01y\x18\x02 \x01(\x05\x12\x11\n\x03row\x18\x03 \x01(\x0e\x32\x04.Row\x12\x17\n\x06switch\x18\x04 \x03(\x0b\x32\x07.Switch\x12\x10\n\x08vertical\x18\x05 \x01(\x08\"I\n\x08Keyboard\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x14\n\x0cmanufacturer\x18\x02 \x01(\t\x12\x19\n\x07\x63luster\x18\x03 \x03(\x0b\x32\x08.Cluster*\xf7\x01\n\x07Profile\x12\x07\n\x03\x44SA\x10\x00\x12\x06\n\x02SA\x10\x15\x12\t\n\x05SA_R1\x10\x01\x12\t\n\x05SA_R2\x10\x02\x12\t\n\x05SA_R3\x10\x03\x12\t\n\x05SA_R4\x10\x04\x12\t\n\x05SS_R1\x10\x05\x12\t\n\x05SS_R2\x10\x06\x12\t\n\x05SS_R3\x10\x07\x12\t\n\x05SS_R4\x10\x08\x12\n\n\x06\x44SS_R1\x10\t\x12\n\n\x06\x44SS_R2\x10\n\x12\n\n\x06\x44SS_R3\x10\x0b\x12\n\n\x06\x44SS_R4\x10\x0c\x12\n\n\x06\x44\x43S_R1\x10\r\x12\n\n\x06\x44\x43S_R2\x10\x0e\x12\n\n\x06\x44\x43S_R3\x10\x0f\x12\n\n\x06\x44\x43S_R4\x10\x10\x12\n\n\x06\x44\x43S_R5\x10\x11\x12\x06\n\x02LP\x10\x12\x12\x06\n\x02KT\x10\x13\x12\x07\n\x03OEM\x10\x14*-\n\x03Row\x12\x06\n\x02R1\x10\x01\x12\x06\n\x02R2\x10\x02\x12\x06\n\x02R3\x10\x03\x12\x06\n\x02R4\x10\x04\x12\x06\n\x02R5\x10\x05*\'\n\x04Stem\x12\n\n\x06\x43HERRY\x10\x00\x12\x08\n\x04\x41LPS\x10\x01\x12\t\n\x05TOPRE\x10\x02*A\n\x08Material\x12\x07\n\x03\x41\x42S\x10\x00\x12\x07\n\x03PBT\x10\x01\x12\x06\n\x02PC\x10\x02\x12\x07\n\x03POM\x10\x03\x12\x07\n\x03PVC\x10\x04\x12\t\n\x05OTHER\x10\x05*\xa8\x01\n\x04Size\x12\x08\n\x04U100\x10\x04\x12\x08\n\x04U125\x10\x05\x12\x08\n\x04U150\x10\x06\x12\x08\n\x04U175\x10\x07\x12\x08\n\x04U200\x10\x08\x12\x08\n\x04U225\x10\t\x12\x08\n\x04U250\x10\n\x12\x08\n\x04U275\x10\x0b\x12\x08\n\x04U300\x10\x0c\x12\x08\n\x04U600\x10\x18\x12\x08\n\x04U625\x10\x19\x12\t\n\x05U625S\x10\x1a\x12\t\n\x05U625U\x10\x1b\x12\x08\n\x04U700\x10\x1c\x12\x08\n\x04V200\x10\x1d\x12\x08\n\x04VISO\x10\x1e*\x1c\n\x06Homing\x12\x08\n\x04\x42UMP\x10\x00\x12\x08\n\x04\x44\x45\x45P\x10\x01')
 )
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
@@ -121,8 +121,8 @@ _PROFILE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=900,
-  serialized_end=1147,
+  serialized_start=928,
+  serialized_end=1175,
 )
 _sym_db.RegisterEnumDescriptor(_PROFILE)
 
@@ -156,8 +156,8 @@ _ROW = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=1149,
-  serialized_end=1194,
+  serialized_start=1177,
+  serialized_end=1222,
 )
 _sym_db.RegisterEnumDescriptor(_ROW)
 
@@ -183,8 +183,8 @@ _STEM = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=1196,
-  serialized_end=1235,
+  serialized_start=1224,
+  serialized_end=1263,
 )
 _sym_db.RegisterEnumDescriptor(_STEM)
 
@@ -222,8 +222,8 @@ _MATERIAL = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=1237,
-  serialized_end=1302,
+  serialized_start=1265,
+  serialized_end=1330,
 )
 _sym_db.RegisterEnumDescriptor(_MATERIAL)
 
@@ -301,8 +301,8 @@ _SIZE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=1305,
-  serialized_end=1473,
+  serialized_start=1333,
+  serialized_end=1501,
 )
 _sym_db.RegisterEnumDescriptor(_SIZE)
 
@@ -324,8 +324,8 @@ _HOMING = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=1475,
-  serialized_end=1503,
+  serialized_start=1503,
+  serialized_end=1531,
 )
 _sym_db.RegisterEnumDescriptor(_HOMING)
 
@@ -387,99 +387,99 @@ DEEP = 1
 
 
 
-_KEY = _descriptor.Descriptor(
-  name='Key',
-  full_name='Key',
+_KEYCAP = _descriptor.Descriptor(
+  name='Keycap',
+  full_name='Keycap',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='profile', full_name='Key.profile', index=0,
+      name='profile', full_name='Keycap.profile', index=0,
       number=1, type=14, cpp_type=8, label=2,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='stem', full_name='Key.stem', index=1,
+      name='stem', full_name='Keycap.stem', index=1,
       number=2, type=14, cpp_type=8, label=2,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='material', full_name='Key.material', index=2,
+      name='material', full_name='Keycap.material', index=2,
       number=3, type=14, cpp_type=8, label=2,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='size', full_name='Key.size', index=3,
+      name='size', full_name='Keycap.size', index=3,
       number=4, type=14, cpp_type=8, label=2,
       has_default_value=False, default_value=4,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='role', full_name='Key.role', index=4,
+      name='role', full_name='Keycap.role', index=4,
       number=5, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='text', full_name='Key.text', index=5,
+      name='text', full_name='Keycap.text', index=5,
       number=6, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='glyph', full_name='Key.glyph', index=6,
+      name='glyph', full_name='Keycap.glyph', index=6,
       number=7, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='color', full_name='Key.color', index=7,
+      name='color', full_name='Keycap.color', index=7,
       number=8, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='color_fore', full_name='Key.color_fore', index=8,
+      name='color_fore', full_name='Keycap.color_fore', index=8,
       number=9, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='homing', full_name='Key.homing', index=9,
+      name='homing', full_name='Keycap.homing', index=9,
       number=10, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='row', full_name='Key.row', index=10,
+      name='row', full_name='Keycap.row', index=10,
       number=11, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='stepped', full_name='Key.stepped', index=11,
+      name='stepped', full_name='Keycap.stepped', index=11,
       number=12, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='repeat', full_name='Key.repeat', index=12,
+      name='repeat', full_name='Keycap.repeat', index=12,
       number=13, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -498,7 +498,7 @@ _KEY = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=18,
-  serialized_end=270,
+  serialized_end=273,
 )
 
 
@@ -542,8 +542,8 @@ _COLORGROUP = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=272,
-  serialized_end=338,
+  serialized_start=275,
+  serialized_end=341,
 )
 
 
@@ -573,8 +573,8 @@ _COLORSCHEME = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=340,
-  serialized_end=381,
+  serialized_start=343,
+  serialized_end=384,
 )
 
 
@@ -653,8 +653,8 @@ _SET = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=384,
-  serialized_end=573,
+  serialized_start=387,
+  serialized_end=576,
 )
 
 
@@ -680,7 +680,7 @@ _KIT = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='key', full_name='Kit.key', index=2,
+      name='cap', full_name='Kit.cap', index=2,
       number=3, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -698,8 +698,8 @@ _KIT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=575,
-  serialized_end=636,
+  serialized_start=578,
+  serialized_end=642,
 )
 
 
@@ -729,8 +729,8 @@ _KITS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=638,
-  serialized_end=663,
+  serialized_start=644,
+  serialized_end=669,
 )
 
 
@@ -762,6 +762,20 @@ _SWITCH = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
+    _descriptor.FieldDescriptor(
+      name='x', full_name='Switch.x', index=3,
+      number=4, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='y', full_name='Switch.y', index=4,
+      number=5, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
   ],
   extensions=[
   ],
@@ -774,8 +788,8 @@ _SWITCH = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=665,
-  serialized_end=727,
+  serialized_start=671,
+  serialized_end=755,
 )
 
 
@@ -833,8 +847,8 @@ _CLUSTER = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=729,
-  serialized_end=822,
+  serialized_start=757,
+  serialized_end=850,
 )
 
 
@@ -878,29 +892,29 @@ _KEYBOARD = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=824,
-  serialized_end=897,
+  serialized_start=852,
+  serialized_end=925,
 )
 
-_KEY.fields_by_name['profile'].enum_type = _PROFILE
-_KEY.fields_by_name['stem'].enum_type = _STEM
-_KEY.fields_by_name['material'].enum_type = _MATERIAL
-_KEY.fields_by_name['size'].enum_type = _SIZE
-_KEY.fields_by_name['homing'].enum_type = _HOMING
+_KEYCAP.fields_by_name['profile'].enum_type = _PROFILE
+_KEYCAP.fields_by_name['stem'].enum_type = _STEM
+_KEYCAP.fields_by_name['material'].enum_type = _MATERIAL
+_KEYCAP.fields_by_name['size'].enum_type = _SIZE
+_KEYCAP.fields_by_name['homing'].enum_type = _HOMING
 _COLORSCHEME.fields_by_name['group'].message_type = _COLORGROUP
 _SET.fields_by_name['profile'].enum_type = _PROFILE
 _SET.fields_by_name['stem'].enum_type = _STEM
 _SET.fields_by_name['material'].enum_type = _MATERIAL
 _SET.fields_by_name['color_scheme'].message_type = _COLORSCHEME
 _KIT.fields_by_name['set'].message_type = _SET
-_KIT.fields_by_name['key'].message_type = _KEY
+_KIT.fields_by_name['cap'].message_type = _KEYCAP
 _KITS.fields_by_name['kit'].message_type = _KIT
 _SWITCH.fields_by_name['size'].enum_type = _SIZE
 _SWITCH.fields_by_name['row'].enum_type = _ROW
 _CLUSTER.fields_by_name['row'].enum_type = _ROW
 _CLUSTER.fields_by_name['switch'].message_type = _SWITCH
 _KEYBOARD.fields_by_name['cluster'].message_type = _CLUSTER
-DESCRIPTOR.message_types_by_name['Key'] = _KEY
+DESCRIPTOR.message_types_by_name['Keycap'] = _KEYCAP
 DESCRIPTOR.message_types_by_name['ColorGroup'] = _COLORGROUP
 DESCRIPTOR.message_types_by_name['ColorScheme'] = _COLORSCHEME
 DESCRIPTOR.message_types_by_name['Set'] = _SET
@@ -916,12 +930,12 @@ DESCRIPTOR.enum_types_by_name['Material'] = _MATERIAL
 DESCRIPTOR.enum_types_by_name['Size'] = _SIZE
 DESCRIPTOR.enum_types_by_name['Homing'] = _HOMING
 
-Key = _reflection.GeneratedProtocolMessageType('Key', (_message.Message,), dict(
-  DESCRIPTOR = _KEY,
+Keycap = _reflection.GeneratedProtocolMessageType('Keycap', (_message.Message,), dict(
+  DESCRIPTOR = _KEYCAP,
   __module__ = 'keycaps_pb2'
-  # @@protoc_insertion_point(class_scope:Key)
+  # @@protoc_insertion_point(class_scope:Keycap)
   ))
-_sym_db.RegisterMessage(Key)
+_sym_db.RegisterMessage(Keycap)
 
 ColorGroup = _reflection.GeneratedProtocolMessageType('ColorGroup', (_message.Message,), dict(
   DESCRIPTOR = _COLORGROUP,

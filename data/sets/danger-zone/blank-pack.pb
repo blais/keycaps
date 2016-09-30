@@ -14,7 +14,7 @@ set {
 
 kit_name: "Blank Pack"
 
-key {                                                      size: U100   color: "GSM" repeat: 2 }
-key {                                                      size: U125 color: "GSM" repeat: 2 }
-key {                                                      size: U150 color: "GSM" repeat: 2 }
-key {                                                      size: U175 color: "GSM" repeat: 2 }
+cap {                                                      size: U100   color: "GSM" repeat: 2 }
+cap {                                                      size: U125 color: "GSM" repeat: 2 }
+cap {                                                      size: U150 color: "GSM" repeat: 2 }
+cap {                                                      size: U175 color: "GSM" repeat: 2 }

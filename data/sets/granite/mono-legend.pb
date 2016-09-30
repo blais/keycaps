@@ -18,44 +18,44 @@ set {
 
 kit_name: "Mono Legend"
 
-key { role: "semicolon" glyph: ";"    size: U100   color: "GKK" }
-key { role: "semicolon" glyph: ":"    size: U100   color: "GKK" }
-key { role: "less" glyph: "<"         size: U100   color: "GKK" }
-key { role: "greater" glyph: ">"      size: U100   color: "GKK" }
-key { role: "grave" glyph: "`"        size: U100   color: "GKK" }
-key { role: "apostrophe" glyph: "'"   size: U100   color: "GKK" }
-key { role: "slash" glyph: "?"        size: U100   color: "GKK" }
-key { role: "2" glyph: "@"            size: U100   color: "GKK" }
-key { role: "period" glyph: "."       size: U100   color: "GKK" }
-key { role: "comma" glyph: ","        size: U100   color: "GKK" }
-key { role: "8" glyph: "*"            size: U100   color: "GKK" }
-key { role: "slash" glyph: "/"        size: U100   color: "GKK" }
-key { role: "grave"  glyph: "~"       size: U100   color: "GKK" }
-key { role: "3" glyph: "#"            size: U100   color: "GKK" }
-key { role: "6"  glyph: "^"           size: U100   color: "GKK" }
-key { role: "plus" glyph: "+"         size: U100   color: "GKK" }
-key { role: "minus"                   size: U100   color: "GKK" }
-key { role: "equal"                   size: U100   color: "GKK" }
-key { role: "1" glyph: "!"            size: U100   color: "GKK" }
-key { role: "4" glyph: "$"            size: U100   color: "GKK" }
-key { role: "5" glyph: "%"            size: U100   color: "GKK" }
-key { role: "7"  glyph: "&"           size: U100   color: "GKK" }
-key { role: "9" glyph: "("            size: U100   color: "GKK" }
-key { role: "0" glyph: ")"            size: U100   color: "GKK" }
-key { role: "[" glyph: "{"            size: U100   color: "GKK" }
-key { role: "]" glyph: "}"            size: U100   color: "GKK" }
-key { role: "[" glyph: "["            size: U100   color: "GKK" }
-key { role: "]"  glyph: "]"           size: U100   color: "GKK" }
-key { role: "apostrophe"  glyph: "\"" size: U100   color: "GKK" }
-key { role: "backslash" glyph: "\\"   size: U100   color: "GKK" }
-key { role: "0"                       size: U100   color: "GKK" }
-key { role: "1"                       size: U100   color: "GKK" }
-key { role: "2"                       size: U100   color: "GKK" }
-key { role: "3"                       size: U100   color: "GKK" }
-key { role: "4"                       size: U100   color: "GKK" }
-key { role: "5"                       size: U100   color: "GKK" }
-key { role: "6"                       size: U100   color: "GKK" }
-key { role: "7"                       size: U100   color: "GKK" }
-key { role: "8"                       size: U100   color: "GKK" }
-key { role: "9"                       size: U100   color: "GKK" }
-key { role: "backslash" glyph: "\\"   size: U150 color: "GKK" }
+cap { role: "semicolon" glyph: ";"    size: U100   color: "GKK" }
+cap { role: "semicolon" glyph: ":"    size: U100   color: "GKK" }
+cap { role: "less" glyph: "<"         size: U100   color: "GKK" }
+cap { role: "greater" glyph: ">"      size: U100   color: "GKK" }
+cap { role: "grave" glyph: "`"        size: U100   color: "GKK" }
+cap { role: "apostrophe" glyph: "'"   size: U100   color: "GKK" }
+cap { role: "slash" glyph: "?"        size: U100   color: "GKK" }
+cap { role: "2" glyph: "@"            size: U100   color: "GKK" }
+cap { role: "period" glyph: "."       size: U100   color: "GKK" }
+cap { role: "comma" glyph: ","        size: U100   color: "GKK" }
+cap { role: "8" glyph: "*"            size: U100   color: "GKK" }
+cap { role: "slash" glyph: "/"        size: U100   color: "GKK" }
+cap { role: "grave"  glyph: "~"       size: U100   color: "GKK" }
+cap { role: "3" glyph: "#"            size: U100   color: "GKK" }
+cap { role: "6"  glyph: "^"           size: U100   color: "GKK" }
+cap { role: "plus" glyph: "+"         size: U100   color: "GKK" }
+cap { role: "minus"                   size: U100   color: "GKK" }
+cap { role: "equal"                   size: U100   color: "GKK" }
+cap { role: "1" glyph: "!"            size: U100   color: "GKK" }
+cap { role: "4" glyph: "$"            size: U100   color: "GKK" }
+cap { role: "5" glyph: "%"            size: U100   color: "GKK" }
+cap { role: "7"  glyph: "&"           size: U100   color: "GKK" }
+cap { role: "9" glyph: "("            size: U100   color: "GKK" }
+cap { role: "0" glyph: ")"            size: U100   color: "GKK" }
+cap { role: "[" glyph: "{"            size: U100   color: "GKK" }
+cap { role: "]" glyph: "}"            size: U100   color: "GKK" }
+cap { role: "[" glyph: "["            size: U100   color: "GKK" }
+cap { role: "]"  glyph: "]"           size: U100   color: "GKK" }
+cap { role: "apostrophe"  glyph: "\"" size: U100   color: "GKK" }
+cap { role: "backslash" glyph: "\\"   size: U100   color: "GKK" }
+cap { role: "0"                       size: U100   color: "GKK" }
+cap { role: "1"                       size: U100   color: "GKK" }
+cap { role: "2"                       size: U100   color: "GKK" }
+cap { role: "3"                       size: U100   color: "GKK" }
+cap { role: "4"                       size: U100   color: "GKK" }
+cap { role: "5"                       size: U100   color: "GKK" }
+cap { role: "6"                       size: U100   color: "GKK" }
+cap { role: "7"                       size: U100   color: "GKK" }
+cap { role: "8"                       size: U100   color: "GKK" }
+cap { role: "9"                       size: U100   color: "GKK" }
+cap { role: "backslash" glyph: "\\"   size: U150 color: "GKK" }

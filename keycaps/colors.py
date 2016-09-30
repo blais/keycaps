@@ -1,8 +1,10 @@
 #!/usr/bin/env python3
 
+def get(name):
+    return globals()[name]
+
 def rgb(r, g, b):
     return '#{:06X}'.format(r << 16 | g << 8 | b)
-
 
 # PBT colors.
 BCT = rgb(0, 117, 173)

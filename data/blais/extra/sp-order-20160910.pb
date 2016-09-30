@@ -12,9 +12,9 @@ set {
 
 kit_name: "Special Order of Blank 6u and 2u keys from Signature Plastics on 2016-09-10"
 
-key { role: "spacebar" size: U600 color: "WAN"           }
-key { role: "spacebar" size: U600 color: "YBS"            }
-key { role: "spacebar" size: U600 color: "BCT"           }
+cap { role: "spacebar" size: U600 color: "WAN"           }
+cap { role: "spacebar" size: U600 color: "YBS"            }
+cap { role: "spacebar" size: U600 color: "BCT"           }
 
-key {                  size: U200 color: "BCT" repeat: 4 }
-key {                  size: U200 color: "GB"  repeat: 4 }
+cap {                  size: U200 color: "BCT" repeat: 4 }
+cap {                  size: U200 color: "GB"  repeat: 4 }

@@ -19,8 +19,8 @@ set {
 kit_name: "Extra keys sent to me by Massdrop by mistake"
 
 # Note: They sent me an extra one by mistake after an email about the stabilizer being incorrect.
-key { role: "spacebar"  size: U625S  color: "GKK" }
+cap { role: "spacebar"  size: U625S  color: "GKK" }
 
-key { role: "f"         size: U100   color: "GKK" homing: DEEP }
-key { role: "j"         size: U100   color: "GKK" homing: DEEP }
+cap { role: "f"         size: U100   color: "GKK" homing: DEEP }
+cap { role: "j"         size: U100   color: "GKK" homing: DEEP }
 # Note: I think they may have sent me two of these even.

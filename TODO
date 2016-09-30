@@ -1,5 +1,13 @@
 Add direct photo URLs, and pull in the photos for each kit.
 
+# U652S vs. U625, should match each other.
+# Rows must be made to match as well, for Godspeed SA.
+# Render alternatives as well.
+# Render assignment to text as a table below the graphics.
+# In order to accommodate the mod-spacebar layout, you need 1/8ths, so convert resolution to that.
+# Make equivalence sets: meta == alt, backspace == delete, allow user to specify.
+
+
 Missing data:
 
 # FIXME: colorful keys

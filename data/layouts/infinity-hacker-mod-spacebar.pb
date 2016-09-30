@@ -82,7 +82,7 @@ cluster {
   switch { size: U150  }
   switch { size: U100  role: "super" }
   switch { size: U125  role: "meta" }
-  switch { size: U625  role: "spacebar" }
+  switch { size: U625S role: "spacebar" }
   switch { size: U125  role: "function" }
   switch { size: U100  role: "function" }
   switch { size: U100  }

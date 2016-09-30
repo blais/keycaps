@@ -18,15 +18,15 @@ set {
 
 kit_name: "Blank Pack"
 
-key { size: U100   color: "GDE"  repeat: 3 }
-key { size: U100   color: "BCT"  }
-key { size: U100   color: "GKK"  repeat: 3 }
-key { size: U100   color: "RBH"  }
+cap { size: U100   color: "GDE"  repeat: 3 }
+cap { size: U100   color: "BCT"  }
+cap { size: U100   color: "GKK"  repeat: 3 }
+cap { size: U100   color: "RBH"  }
 
-key { size: U125 color: "GDE"  repeat: 2 }
-key { size: U125 color: "BCT"  }
-key { size: U125 color: "RBH"  }
+cap { size: U125 color: "GDE"  repeat: 2 }
+cap { size: U125 color: "BCT"  }
+cap { size: U125 color: "RBH"  }
 
-key { size: U150 color: "GDE"  repeat: 2 }
+cap { size: U150 color: "GDE"  repeat: 2 }
 
-key { size: U200   color: "GDE"  }
+cap { size: U200   color: "GDE"  }

@@ -18,32 +18,32 @@ set {
 
 kit_name: "Icon Pro Modifiers"
 
-key { glyph: "asterisk"                                    size: U100   color: "GDE" }
-key { glyph: "asterisk"                                    size: U100   color: "GDE" }
-key { glyph: "option"                                      size: U100   color: "GDE" }
-key { glyph: "option"                                      size: U100   color: "GDE" }
-key { glyph: "stack"                                       size: U100   color: "GDE" }
-key { glyph: "stack"                                       size: U100   color: "GDE" }
-key { glyph: "hamburger"                                   size: U100   color: "GDE" }
-key { role: "meta"                                         size: U100   color: "GDE" }
-key { role: "meta"                                         size: U100   color: "GDE" }
-key { role: "tab"                                          size: U100   color: "GDE" }
-key { role: "backspace"                                    size: U100   color: "GDE" }
-key { glyph: "double-arrow"                                size: U100   color: "GDE" }
+cap { glyph: "asterisk"                                    size: U100   color: "GDE" }
+cap { glyph: "asterisk"                                    size: U100   color: "GDE" }
+cap { glyph: "option"                                      size: U100   color: "GDE" }
+cap { glyph: "option"                                      size: U100   color: "GDE" }
+cap { glyph: "stack"                                       size: U100   color: "GDE" }
+cap { glyph: "stack"                                       size: U100   color: "GDE" }
+cap { glyph: "hamburger"                                   size: U100   color: "GDE" }
+cap { role: "meta"                                         size: U100   color: "GDE" }
+cap { role: "meta"                                         size: U100   color: "GDE" }
+cap { role: "tab"                                          size: U100   color: "GDE" }
+cap { role: "backspace"                                    size: U100   color: "GDE" }
+cap { glyph: "double-arrow"                                size: U100   color: "GDE" }
 
-key { role: "caps-lock"                                    size: U125 color: "GDE" }
-key { glyph: "stack"                                       size: U125 color: "GDE" }
-key { glyph: "double-arrow"                                size: U125 color: "GDE" }
+cap { role: "caps-lock"                                    size: U125 color: "GDE" }
+cap { glyph: "stack"                                       size: U125 color: "GDE" }
+cap { glyph: "double-arrow"                                size: U125 color: "GDE" }
 
-key { glyph: "asterisk"                                    size: U150 color: "GDE" }
-key { glyph: "asterisk"                                    size: U150 color: "GDE" }
-key { glyph: "option"                                      size: U150 color: "GDE" }
-key { glyph: "option"                                      size: U150 color: "GDE" }
-key { role: "caps-lock"                                    size: U150 color: "GDE" }
-key { glyph: "stack"                                       size: U150 color: "GDE" }
-key { role: "backspace"                                    size: U150 color: "GDE" }
+cap { glyph: "asterisk"                                    size: U150 color: "GDE" }
+cap { glyph: "asterisk"                                    size: U150 color: "GDE" }
+cap { glyph: "option"                                      size: U150 color: "GDE" }
+cap { glyph: "option"                                      size: U150 color: "GDE" }
+cap { role: "caps-lock"                                    size: U150 color: "GDE" }
+cap { glyph: "stack"                                       size: U150 color: "GDE" }
+cap { role: "backspace"                                    size: U150 color: "GDE" }
 
-key { role: "shift"                                        size: U175 color: "GDE" }
-key { role: "asterisk"                                     size: U175 color: "GDE" }
-key { role: "stack"                                        size: U175 color: "GDE" }
-key { role: "asterisk"                                     size: U175 color: "GDE" stepped: true }
+cap { role: "shift"                                        size: U175 color: "GDE" }
+cap { role: "asterisk"                                     size: U175 color: "GDE" }
+cap { role: "stack"                                        size: U175 color: "GDE" }
+cap { role: "asterisk"                                     size: U175 color: "GDE" stepped: true }

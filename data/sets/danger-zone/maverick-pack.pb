@@ -14,21 +14,21 @@ set {
 
 kit_name: "Maverick Pack"
 
-key { role: "caps-lock"    text: "CAPS LOCK"               size: U150 color: "GSM" }
-key { role: "DZ*"          text: "DZ*"                     size: U100   color: "GSM" }
-key { role: "control"      text: "CTRL"                    size: U175 color: "GSM" }
+cap { role: "caps-lock"    text: "CAPS LOCK"               size: U150 color: "GSM" }
+cap { role: "DZ*"          text: "DZ*"                     size: U100   color: "GSM" }
+cap { role: "control"      text: "CTRL"                    size: U175 color: "GSM" }
 
-key { role: "h"                                            size: U100   color: "BFU" homing: BUMP }
-key { role: "u"                                            size: U100   color: "BFU" homing: BUMP }
-key { role: "n"                                            size: U100   color: "BFU" homing: BUMP }
-key { role: "t"                                            size: U100   color: "BFU" homing: BUMP }
-key { role: "function"           text: "FN"                      size: U100   color: "GSM" }
-key { role: "shift"        text: "SHIFT"                   size: U150 color: "GSM" }
+cap { role: "h"                                            size: U100   color: "BFU" homing: BUMP }
+cap { role: "u"                                            size: U100   color: "BFU" homing: BUMP }
+cap { role: "n"                                            size: U100   color: "BFU" homing: BUMP }
+cap { role: "t"                                            size: U100   color: "BFU" homing: BUMP }
+cap { role: "function"           text: "FN"                      size: U100   color: "GSM" }
+cap { role: "shift"        text: "SHIFT"                   size: U150 color: "GSM" }
 
-key { role: "control"      text: "CTRL"                    size: U150 color: "GSM" }
-key { role: "super"        text: "SUPER"                   size: U100   color: "GSM" }
-key { role: "alt"          text: "ALT"                     size: U150 color: "GSM" }
-key { role: "spacebar"                                                     size: U700   color: "BFU" }
-key { role: "alt"          text: "ALT"                     size: U150 color: "GSM" }
-key { role: "meta"         text: "META"                    size: U100   color: "GSM" }
-key { role: "control"      text: "CTRL"                    size: U150 color: "GSM" }
+cap { role: "control"      text: "CTRL"                    size: U150 color: "GSM" }
+cap { role: "super"        text: "SUPER"                   size: U100   color: "GSM" }
+cap { role: "alt"          text: "ALT"                     size: U150 color: "GSM" }
+cap { role: "spacebar"                                                     size: U700   color: "BFU" }
+cap { role: "alt"          text: "ALT"                     size: U150 color: "GSM" }
+cap { role: "meta"         text: "META"                    size: U100   color: "GSM" }
+cap { role: "control"      text: "CTRL"                    size: U150 color: "GSM" }

@@ -5,20 +5,121 @@ __author__ = 'Martin Blais <blais@furius.ca>'
 
 import argparse
 import itertools
+import io
 import logging
+import sys
 
+from keycaps import colors
 from keycaps import keyio
 from keycaps import keycaps_pb2
 from google.protobuf import text_format
 
 
-def read_keys(filename):
+def read_kit(filename):
     kit = keyio.read_file(filename, keycaps_pb2.Kit)
-    for key in kit.key:
+    for key in kit.cap:
         for name in 'profile', 'stem', 'material':
             if not key.HasField(name):
                 setattr(key, name, getattr(kit.set, name))
         yield key
+
+
+CSS = """
+
+.key {
+  border: thin solid black;
+  margin: 3px;
+  padding: 2px;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 1024px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
+
+"""
+
+
+TEMPLATE = """\
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>Layout Key Assignment</title>
+    <style type="text/css">
+{style}
+    </style>
+  </head>
+  <body>
+{keys}
+  </body>
+</html>
+"""
+
+KEY = """
+    <div class="key tooltip"
+         style="position: absolute; left: {left}px; top: {top}px; width: {width}px; height: {height}px; background-color: {color}">
+      {text}
+      <span class="tooltiptext">{tiptext}</span>
+    </div>
+"""
+
+
+# The width of a key along its main direction.
+SIZE_WIDTH = {
+    keycaps_pb2.U100: 4,
+    keycaps_pb2.U125: 5,
+    keycaps_pb2.U150: 6,
+    keycaps_pb2.U175: 7,
+    keycaps_pb2.U200: 8,
+    keycaps_pb2.U225: 9,
+    keycaps_pb2.U250: 10,
+    keycaps_pb2.U275: 11,
+    keycaps_pb2.U300: 12,
+    keycaps_pb2.U600: 24,
+    keycaps_pb2.U625: 25,
+    keycaps_pb2.U625S: 25,
+    keycaps_pb2.U625U: 25,
+    keycaps_pb2.U700: 28,
+    keycaps_pb2.V200: 8,
+    keycaps_pb2.VISO: None,
+}
+
+
+
+def fill_positions(keyboard):
+    """Fill in the position of the individual switches from its clusters.
+
+    Args:
+      keyboard: An instance of Keyboard.
+    Returns:
+      A copy of 'keyboard' with the x,y coordinates on all the switches resolved
+      from their parent clusters.
+    """
+    output = keycaps_pb2.Keyboard()
+    output.CopyFrom(keyboard)
+    for cluster in output.cluster:
+        x = cluster.x
+        y = cluster.y
+        for switch in cluster.switch:
+            if not switch.HasField('x'):
+                switch.x = x
+            if not switch.HasField('y'):
+                switch.y = y
+            x += SIZE_WIDTH[switch.size]
+    return output
+
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__.strip())
@@ -26,12 +127,14 @@ def main():
     parser.add_argument('kits', nargs='+', help='Filenames of all kits')
     args = parser.parse_args()
 
-    allkeys = list(itertools.chain.from_iterable(read_keys(filename) for filename in args.kits))
-    # for key in keys:
-    #     print((keycaps_pb2.Size.Name(key.size), key.role))
+    allkeys = list(itertools.chain.from_iterable(read_kit(filename)
+                                                 for filename in args.kits))
 
-    # Read the target keyboard file we have to cover.
-    keyboard = keyio.read_file(args.keyboard, keycaps_pb2.Keyboard)
+    # Read the target keyboard layout file we have to cover.
+    keyboard_ = keyio.read_file(args.keyboard, keycaps_pb2.Keyboard)
+
+    # Fill in the position of the individual switches from its clusters.
+    keyboard = fill_positions(keyboard_)
 
     # For each switch with a role, try to find a matching key.
     keys = list(allkeys)
@@ -67,15 +170,38 @@ def main():
                  logging.error("Could not find key for switch: {}".format(
                      text_format.MessageToString(switch, as_one_line=True)))
 
-    # Print the list of succesfully matched keys.
+    ## FIXME: Remove
+    if 0:
+        # Print the list of succesfully matched keys.
+        for switch, key in matches:
+            print(text_format.MessageToString(switch, as_one_line=True))
+            print(text_format.MessageToString(key, as_one_line=True))
+            print()
+
+    # Render some HTML of the assignment.
+    U = 25
+    margin = 5
+    keysoss = io.StringIO()
     for switch, key in matches:
-        print(text_format.MessageToString(switch, as_one_line=True))
-        print(text_format.MessageToString(key, as_one_line=True))
-        print()
+        keyoss = io.StringIO()
+        keyoss.write("<p>SWITCH: ")
+        keyoss.write(text_format.MessageToString(switch, as_one_line=True))
+        keyoss.write("</p>\n")
+        keyoss.write("<p>KEY: ")
+        keyoss.write(text_format.MessageToString(key, as_one_line=True))
+        keyoss.write("</p>\n")
 
+        text = '<i>{}</i><br/><b>{}</b>'.format(switch.role, key.text)
+        keysoss.write(KEY.format(
+            top=switch.y*U,
+            left=switch.x*U,
+            width=int(SIZE_WIDTH[switch.size]*U) - 2*margin,
+            height=4*U - 2*margin,
+            color=colors.get(key.color),
+            text=text,
+            tiptext=keyoss.getvalue()))
 
-## FIXME: Highlight ambiguity / extra choices.
-## FIXME: Make equivalence sets: meta == alt, backspace == delete, allow user to specify.
+    print(TEMPLATE.format(style=CSS, keys=keysoss.getvalue()))
 
 
 if __name__ == '__main__':

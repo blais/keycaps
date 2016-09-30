@@ -96,7 +96,7 @@ enum Homing {
   DEEP = 1;  // Deep dish homing key.
 }
 
-message Key {
+message Keycap {
   // A physical description of the key.
   required Profile profile = 1;
   required Stem stem = 2;
@@ -179,7 +179,7 @@ message Kit {
   optional string kit_name = 2;
 
   // The list of keys in this kit.
-  repeated Key key = 3;
+  repeated Keycap cap = 3;
 }
 
 message Kits {
@@ -202,6 +202,11 @@ message Switch {
   // The intended row for this switch position. Its default value is set in its
   // parent cluster.
   optional Row row = 3;
+
+  // Location of the top-left corner of the key, in 1/4U units. This is
+  // automatically filled in from the parent cluster.
+  optional int32 x = 4;
+  optional int32 y = 5;
 }
 
 // A cluster of keys. Switch positions are always define within these
@@ -227,6 +232,7 @@ message Cluster {
   optional bool vertical = 5;
 
 }
+
 // A description of a keyboard's geometry and intended roles (layout).
 message Keyboard {
   // The name of the layout of the keyboard.

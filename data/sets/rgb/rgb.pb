@@ -20,17 +20,17 @@ set {
 }
 kit_name: "RGB Keycap Set"
 
-key { text: "spades"   size: U125  color: "#FFFF00" }
-key { text: "hearts"   size: U125  color: "#FFFF00" }
-key { text: "diamonds" size: U125  color: "#FFFF00" }
-key { text: "clubs"    size: U125  color: "#FFFF00" }
+cap { text: "spades"   size: U125  color: "#FFFF00" }
+cap { text: "hearts"   size: U125  color: "#FFFF00" }
+cap { text: "diamonds" size: U125  color: "#FFFF00" }
+cap { text: "clubs"    size: U125  color: "#FFFF00" }
 
-key { role: "alt" text: "Alt"  size: U125  color: "#0000FF"  repeat: 2 }
-key { role: "alt" text: "Alt"  size: U150  color: "#0000FF"  repeat: 2 }
+cap { role: "alt" text: "Alt"  size: U125  color: "#0000FF"  repeat: 2 }
+cap { role: "alt" text: "Alt"  size: U150  color: "#0000FF"  repeat: 2 }
 
-key { role: "control" text: "Control"  size: U125  color: "#FF0000"  repeat: 2 }
-key { role: "control" text: "Control"  size: U150  color: "#FF0000"  repeat: 2 }
+cap { role: "control" text: "Control"  size: U125  color: "#FF0000"  repeat: 2 }
+cap { role: "control" text: "Control"  size: U150  color: "#FF0000"  repeat: 2 }
 
-key { role: "shift" text: "Shift with Up-arrow"  size: U175  color: "#00FF00" }
-key { role: "shift" text: "Shift with Up-arrow"  size: U225  color: "#00FF00" }
-key { role: "shift" text: "Shift with Up-arrow"  size: U275  color: "#00FF00" }
+cap { role: "shift" text: "Shift with Up-arrow"  size: U175  color: "#00FF00" }
+cap { role: "shift" text: "Shift with Up-arrow"  size: U225  color: "#00FF00" }
+cap { role: "shift" text: "Shift with Up-arrow"  size: U275  color: "#00FF00" }

@@ -18,8 +18,8 @@ set {
 
 kit_name: "Enter + Esc Kit"
 
-key { role: "escape"       text: "ESC"    size: U100   color: "RBH" }
-key { role: "escape"                      size: U100   color: "RBH" }
+cap { role: "escape"       text: "ESC"    size: U100   color: "RBH" }
+cap { role: "escape"                      size: U100   color: "RBH" }
 
-key { role: "enter"        text: "ENTER"  size: U225 color: "BCT" }
-key { role: "enter"                       size: U225 color: "BCT" }
+cap { role: "enter"        text: "ENTER"  size: U225 color: "BCT" }
+cap { role: "enter"                       size: U225 color: "BCT" }

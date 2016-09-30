@@ -18,35 +18,35 @@ set {
 
 kit_name: "Tsafox"
 
-key { role: "backspace" text: "BACK SPACE" size: U100 color: "BFJ" profile: SA_R1 }
-key { role: "backslash" text: "\\ |"       size: U100 color: "BFJ" profile: SA_R1 }
-key { role: "backslash" text: "\\ |"       size: U100 color: "WBO" profile: SA_R1 }
+cap { role: "backspace" text: "BACK SPACE" size: U100 color: "BFJ" profile: SA_R1 }
+cap { role: "backslash" text: "\\ |"       size: U100 color: "BFJ" profile: SA_R1 }
+cap { role: "backslash" text: "\\ |"       size: U100 color: "WBO" profile: SA_R1 }
 
-key { role: "page-up"   text: "PAGE UP"    size: U100 color: "BFJ" profile: SA_R2 }
-key { role: "backspace" text: "ERASE"      size: U150 color: "BFJ" profile: SA_R2 }
+cap { role: "page-up"   text: "PAGE UP"    size: U100 color: "BFJ" profile: SA_R2 }
+cap { role: "backspace" text: "ERASE"      size: U150 color: "BFJ" profile: SA_R2 }
 
-key { role: "page-up"   text: "PAGE UP"    size: U100 color: "BFJ" profile: SA_R3 }
-key { role: "page-down" text: "PAGE DOWN"  size: U100 color: "BFJ" profile: SA_R3 }
-key { role: "insert"    text: "INS"        size: U100 color: "BFJ" profile: SA_R3 }
-key { role: "caps-lock" text: "CAPS LOCK"  size: U175 color: "BFJ" profile: SA_R3 stepped: true }
-key { role: "control"   text: "CTRL"       size: U175 color: "BFJ" profile: SA_R3 stepped: true }
-key { role: "shift"     text: "SHIFT"      size: U175 color: "BFJ" profile: SA_R3 }
-key { role: "shift"     text: "SHIFT"      size: U225 color: "BFJ" profile: SA_R3 }
+cap { role: "page-up"   text: "PAGE UP"    size: U100 color: "BFJ" profile: SA_R3 }
+cap { role: "page-down" text: "PAGE DOWN"  size: U100 color: "BFJ" profile: SA_R3 }
+cap { role: "insert"    text: "INS"        size: U100 color: "BFJ" profile: SA_R3 }
+cap { role: "caps-lock" text: "CAPS LOCK"  size: U175 color: "BFJ" profile: SA_R3 stepped: true }
+cap { role: "control"   text: "CTRL"       size: U175 color: "BFJ" profile: SA_R3 stepped: true }
+cap { role: "shift"     text: "SHIFT"      size: U175 color: "BFJ" profile: SA_R3 }
+cap { role: "shift"     text: "SHIFT"      size: U225 color: "BFJ" profile: SA_R3 }
 
-key { role: "function"  text: "FN"         size: U100 color: "BFJ" profile: SA_R4 }
-key { role: "page-down" text: "PAGE DOWN"  size: U100 color: "BFJ" profile: SA_R4 }
-key { role: "delete"    text: "DEL"        size: U100 color: "BFJ" profile: SA_R4 }
-key { role: "shift"     text: "SHIFT"      size: U175 color: "BFJ" profile: SA_R4 }
-key { role: "shift"     text: "SHIFT"      size: U225 color: "BFJ" profile: SA_R4 }
+cap { role: "function"  text: "FN"         size: U100 color: "BFJ" profile: SA_R4 }
+cap { role: "page-down" text: "PAGE DOWN"  size: U100 color: "BFJ" profile: SA_R4 }
+cap { role: "delete"    text: "DEL"        size: U100 color: "BFJ" profile: SA_R4 }
+cap { role: "shift"     text: "SHIFT"      size: U175 color: "BFJ" profile: SA_R4 }
+cap { role: "shift"     text: "SHIFT"      size: U225 color: "BFJ" profile: SA_R4 }
 
-key { role: "control"   text: "CTRL"       size: U150 color: "BFJ" profile: SA_R3 repeat: 2 }
-key { role: "alt"       text: "ALT"        size: U150 color: "BFJ" profile: SA_R3 repeat: 2 }
+cap { role: "control"   text: "CTRL"       size: U150 color: "BFJ" profile: SA_R3 repeat: 2 }
+cap { role: "alt"       text: "ALT"        size: U150 color: "BFJ" profile: SA_R3 repeat: 2 }
 
-key { role: "backspace" text: "ERASE"      size: U150 color: "BFJ" profile: SA_R3 repeat: 2 }
-key { role: "control"   text: "CTRL"       size: U100 color: "BFJ" profile: SA_R3 }
-key { role: "alt"       text: "ALT"        size: U100 color: "BFJ" profile: SA_R3 }
-key {                   text: "CMD"        size: U100 color: "BFJ" profile: SA_R3 }
-key {                   text: "SYS"        size: U100 color: "BFJ" profile: SA_R3 }
-key {                   text: "FN"         size: U100 color: "BFJ" profile: SA_R3 }
+cap { role: "backspace" text: "ERASE"      size: U150 color: "BFJ" profile: SA_R3 repeat: 2 }
+cap { role: "control"   text: "CTRL"       size: U100 color: "BFJ" profile: SA_R3 }
+cap { role: "alt"       text: "ALT"        size: U100 color: "BFJ" profile: SA_R3 }
+cap {                   text: "CMD"        size: U100 color: "BFJ" profile: SA_R3 }
+cap {                   text: "SYS"        size: U100 color: "BFJ" profile: SA_R3 }
+cap {                   text: "FN"         size: U100 color: "BFJ" profile: SA_R3 }
 
-key { role: "spacebar"                     size: U700 color: "WBO" profile: SA_R3 }
+cap { role: "spacebar"                     size: U700 color: "WBO" profile: SA_R3 }
