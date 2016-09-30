@@ -11,6 +11,7 @@ syntax = "proto2";
 enum Profile {
   DSA = 0;
 
+  SA = 21; // Generic SA
   SA_R1 = 1;
   SA_R2 = 2;
   SA_R3 = 3;

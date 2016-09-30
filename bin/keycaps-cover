@@ -15,8 +15,9 @@ from google.protobuf import text_format
 def read_keys(filename):
     kit = keyio.read_file(filename, keycaps_pb2.Kit)
     for key in kit.key:
-        if not key.HasField('type'):
-            key.type = kit.set.type
+        for name in 'profile', 'stem', 'material':
+            if not key.HasField(name):
+                setattr(key, name, getattr(kit.set, name))
         yield key
 
 def main():
@@ -35,34 +36,36 @@ def main():
     # For each switch with a role, try to find a matching key.
     keys = list(allkeys)
     matches = []
-    for switch in keyboard.switch:
-        if not switch.role:
-            continue
-        tr = (switch.size, switch.role)
-        for index, key in enumerate(keys):
-            sr = (key.size, key.role)
-            if sr == tr:
-                matches.append((switch, key))
-                del keys[index]
-                break
-        else:
-             logging.error("Could not find key for switch: {}".format(
-                 text_format.MessageToString(switch, as_one_line=True)))
+    for cluster in keyboard.cluster:
+        for switch in cluster.switch:
+            if not switch.role:
+                continue
+            tr = (switch.size, switch.role)
+            for index, key in enumerate(keys):
+                sr = (key.size, key.role)
+                if sr == tr:
+                    matches.append((switch, key))
+                    del keys[index]
+                    break
+            else:
+                 logging.error("Could not find key for switch: {}".format(
+                     text_format.MessageToString(switch, as_one_line=True)))
 
     # For each switch with no role, try to find a matching key.
-    for switch in keyboard.switch:
-        if switch.role:
-            continue
-        tr = (switch.size, switch.role)
-        for index, key in enumerate(keys):
-            sr = (key.size, key.role)
-            if sr == tr:
-                matches.append((switch, key))
-                del keys[index]
-                break
-        else:
-             logging.error("Could not find key for switch: {}".format(
-                 text_format.MessageToString(switch, as_one_line=True)))
+    for cluster in keyboard.cluster:
+        for switch in cluster.switch:
+            if switch.role:
+                continue
+            tr = (switch.size, switch.role)
+            for index, key in enumerate(keys):
+                sr = (key.size, key.role)
+                if sr == tr:
+                    matches.append((switch, key))
+                    del keys[index]
+                    break
+            else:
+                 logging.error("Could not find key for switch: {}".format(
+                     text_format.MessageToString(switch, as_one_line=True)))
 
     # Print the list of succesfully matched keys.
     for switch, key in matches:
