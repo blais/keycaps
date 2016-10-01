@@ -24,7 +24,7 @@ cluster {
 
 # Q row
 cluster {
-  x: 0 y: 4
+  x: 0 y: 8
   switch { size: U150  role: "tab" }
   switch { size: U100  role: "q" }
   switch { size: U100  role: "w" }
@@ -43,7 +43,7 @@ cluster {
 
 # A row
 cluster {
-  x: 0 y: 8
+  x: 0 y: 16
   switch { size: U175  role: "control" }
   switch { size: U100  role: "a" }
   switch { size: U100  role: "s" }
@@ -61,7 +61,7 @@ cluster {
 
 # Z row
 cluster {
-  x: 0 y: 12
+  x: 0 y: 24
   switch { size: U225  role: "shift" }
   switch { size: U100  role: "z" }
   switch { size: U100  role: "x" }
@@ -79,7 +79,7 @@ cluster {
 
 # Hacker bottom row
 cluster {
-  x: 0 y: 16
+  x: 0 y: 32
   switch { size: U150  }
   switch { size: U100  role: "super" }
   switch { size: U150  role: "meta" }

@@ -52,7 +52,7 @@ CSS = """
 
 .leftover {
   border-style: dashed;
-  border-width: medium;
+  border-color: red;
 }
 """
 
@@ -82,21 +82,21 @@ KEY = """
 
 # The width of a key along its main direction.
 SIZE_WIDTH = {
-    keycaps_pb2.U100: 4,
-    keycaps_pb2.U125: 5,
-    keycaps_pb2.U150: 6,
-    keycaps_pb2.U175: 7,
-    keycaps_pb2.U200: 8,
-    keycaps_pb2.U225: 9,
-    keycaps_pb2.U250: 10,
-    keycaps_pb2.U275: 11,
-    keycaps_pb2.U300: 12,
-    keycaps_pb2.U600: 24,
-    keycaps_pb2.U625: 25,
-    keycaps_pb2.U625S: 25,
-    keycaps_pb2.U625U: 25,
-    keycaps_pb2.U700: 28,
-    keycaps_pb2.V200: 8,
+    keycaps_pb2.U100: 8,
+    keycaps_pb2.U125: 10,
+    keycaps_pb2.U150: 12,
+    keycaps_pb2.U175: 14,
+    keycaps_pb2.U200: 16,
+    keycaps_pb2.U225: 18,
+    keycaps_pb2.U250: 20,
+    keycaps_pb2.U275: 22,
+    keycaps_pb2.U300: 24,
+    keycaps_pb2.U600: 48,
+    keycaps_pb2.U625: 50,
+    keycaps_pb2.U625S: 50,
+    keycaps_pb2.U625U: 50,
+    keycaps_pb2.U700: 56,
+    keycaps_pb2.V200: 16,
     keycaps_pb2.VISO: None,
 }
 
@@ -191,7 +191,7 @@ def main():
             print()
 
     # Render some HTML of the assignment.
-    U = 25
+    U = 12
     margin = 5
     keysoss = io.StringIO()
     for switch, key in matches:
@@ -213,7 +213,7 @@ def main():
             top=switch.y*U,
             left=switch.x*U,
             width=int(SIZE_WIDTH[switch.size]*U) - 2*margin,
-            height=4*U - 2*margin,
+            height=8*U - 2*margin,
             color=colors.get(key.color),
             text=text,
             tiptext=keyoss.getvalue(),

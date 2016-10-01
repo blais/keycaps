@@ -7,28 +7,28 @@ cluster {
   switch { size: U100 role: "escape" }
 }
 cluster {
-  x: 8 y: 0
+  x: 16 y: 0
   switch { size: U100 role: "F1" }
   switch { size: U100 role: "F2" }
   switch { size: U100 role: "F3" }
   switch { size: U100 role: "F4" }
 }
 cluster {
-  x: 26 y: 0
+  x: 52 y: 0
   switch { size: U100 role: "F5" }
   switch { size: U100 role: "F6" }
   switch { size: U100 role: "F7" }
   switch { size: U100 role: "F8" }
 }
 cluster {
-  x: 44 y: 0
+  x: 88 y: 0
   switch { size: U100 role: "F9" }
   switch { size: U100 role: "F10" }
   switch { size: U100 role: "F11" }
   switch { size: U100 role: "F12" }
 }
 cluster {
-  x: 62 y: 0
+  x: 124 y: 0
   switch { size: U100 role: "print-screen" }
   switch { size: U100 role: "scroll-lock" }
   switch { size: U100 role: "pause" }
@@ -36,7 +36,7 @@ cluster {
 
 # Top row.
 cluster {
-  x: 0 y: 8
+  x: 0 y: 16
   switch { size: U100 role: "escape" }
   switch { size: U100 role: "1" }
   switch { size: U100 role: "2" }
@@ -55,7 +55,7 @@ cluster {
 
 # Q row
 cluster {
-  x: 0 y: 12
+  x: 0 y: 24
   switch { size: U150  role: "tab" }
   switch { size: U100  role: "q" }
   switch { size: U100  role: "w" }
@@ -74,7 +74,7 @@ cluster {
 
 # A row
 cluster {
-  x: 0 y: 16
+  x: 0 y: 32
   switch { size: U175  role: "caps-lock" }
   switch { size: U100  role: "a" }
   switch { size: U100  role: "s" }
@@ -92,7 +92,7 @@ cluster {
 
 # Z row
 cluster {
-  x: 0 y: 20
+  x: 0 y: 40
   switch { size: U225  role: "shift" }
   switch { size: U100  role: "z" }
   switch { size: U100  role: "x" }
@@ -109,29 +109,29 @@ cluster {
 
 # Bottom row.
 cluster {
-  x: 0 y: 24
+  x: 0 y: 48
   switch { size: U150  role: "control" }
 }
 cluster {
-  x: 10 y: 24
+  x: 20 y: 48
   switch { size: U150  role: "alt" }
   switch { size: U700  role: "spacebar" }
   switch { size: U150  role: "alt" }
 }
 cluster {
-  x: 54 y: 24
+  x: 108 y: 48
   switch { size: U150  role: "control" }
 }
 
 # Insert cluster.
 cluster {
-  x: 62 y: 8
+  x: 124 y: 8
   switch { size: U100  role: "insert" }
   switch { size: U100  role: "home" }
   switch { size: U100  role: "page-up" }
 }
 cluster {
-  x: 62 y: 12
+  x: 124 y: 24
   switch { size: U100  role: "delete" }
   switch { size: U100  role: "end" }
   switch { size: U100  role: "page-down" }
@@ -139,11 +139,11 @@ cluster {
 
 # Arrow cluster.
 cluster {
-  x: 66 y: 20
+  x: 132 y: 40
   switch { size: U100  role: "up" }
 }
 cluster {
-  x: 62 y: 24
+  x: 124 y: 48
   switch { size: U100  role: "left" }
   switch { size: U100  role: "down" }
   switch { size: U100  role: "right" }
@@ -151,37 +151,37 @@ cluster {
 
 # Numpad.
 cluster {
-  x: 76 y: 8
+  x: 152 y: 16
   switch { size: U100  role: "num-lock" }
   switch { size: U100  role: "slash" }
   switch { size: U100  role: "asterisk" }
   switch { size: U100  role: "minus" }
 }
 cluster {
-  x: 76 y: 12
+  x: 152 y: 24
   switch { size: U100  role: "7" }
   switch { size: U100  role: "8" }
   switch { size: U100  role: "9" }
 }
 cluster {
-  x: 76 y: 16
+  x: 152 y: 32
   switch { size: U100  role: "4" }
   switch { size: U100  role: "5" }
   switch { size: U100  role: "6" }
 }
 cluster {
-  x: 76 y: 20
+  x: 152 y: 40
   switch { size: U100  role: "1" }
   switch { size: U100  role: "2" }
   switch { size: U100  role: "3" }
 }
 cluster {
-  x: 76 y: 24
+  x: 152 y: 48
   switch { size: U200  role: "0" }
   switch { size: U100  role: "period" }
 }
 cluster {
-  x: 88 y: 24
+  x: 172 y: 48
   vertical: true
   switch { size: V200  role: "kp-plus" }
   switch { size: V200  role: "kp-enter" }
