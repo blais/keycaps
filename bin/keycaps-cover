@@ -117,6 +117,8 @@ def fill_positions(keyboard):
                 switch.x = x
             if not switch.HasField('y'):
                 switch.y = y
+            if not switch.HasField('row'):
+                switch.row = cluster.row
             x += SIZE_WIDTH[switch.size]
     return output
 
@@ -136,39 +138,26 @@ def main():
     # Fill in the position of the individual switches from its clusters.
     keyboard = fill_positions(keyboard_)
 
-    # For each switch with a role, try to find a matching key.
+    # Try to find a matching key, first for switches with a role, then for
+    # switches with no role. Row must always match.
     keys = list(allkeys)
     matches = []
-    for cluster in keyboard.cluster:
-        for switch in cluster.switch:
-            if not switch.role:
-                continue
-            tr = (switch.size, switch.role)
-            for index, key in enumerate(keys):
-                sr = (key.size, key.role)
-                if sr == tr:
-                    matches.append((switch, key))
-                    del keys[index]
-                    break
-            else:
-                 logging.error("Could not find key for switch: {}".format(
-                     text_format.MessageToString(switch, as_one_line=True)))
-
-    # For each switch with no role, try to find a matching key.
-    for cluster in keyboard.cluster:
-        for switch in cluster.switch:
-            if switch.role:
-                continue
-            tr = (switch.size, switch.role)
-            for index, key in enumerate(keys):
-                sr = (key.size, key.role)
-                if sr == tr:
-                    matches.append((switch, key))
-                    del keys[index]
-                    break
-            else:
-                 logging.error("Could not find key for switch: {}".format(
-                     text_format.MessageToString(switch, as_one_line=True)))
+    for func in [lambda s: bool(s.role),
+                 lambda s: not bool(s.role)]:
+        for cluster in keyboard.cluster:
+            for switch in cluster.switch:
+                if func(switch):
+                    continue
+                tr = (switch.size, switch.role, switch.row)
+                for index, key in enumerate(keys):
+                    sr = (key.size, key.role, key.row)
+                    if sr == tr:
+                        matches.append((switch, key))
+                        del keys[index]
+                        break
+                else:
+                     logging.error("Could not find key for switch: {}".format(
+                         text_format.MessageToString(switch, as_one_line=True)))
 
     ## FIXME: Remove
     if 0:

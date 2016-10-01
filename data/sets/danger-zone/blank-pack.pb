@@ -1,6 +1,6 @@
 set {
   set_name: "Danger Zone SA Keycap Set"
-  profile: SA_R3
+  profile: SA
   stem: CHERRY
   material: ABS
 
@@ -14,7 +14,7 @@ set {
 
 kit_name: "Blank Pack"
 
-cap {                                                      size: U100   color: "GSM" repeat: 2 }
-cap {                                                      size: U125 color: "GSM" repeat: 2 }
-cap {                                                      size: U150 color: "GSM" repeat: 2 }
-cap {                                                      size: U175 color: "GSM" repeat: 2 }
+cap {                                                      size: U100 color: "GSM" repeat: 2 row: R3 }
+cap {                                                      size: U125 color: "GSM" repeat: 2 row: R3 }
+cap {                                                      size: U150 color: "GSM" repeat: 2 row: R3 }
+cap {                                                      size: U175 color: "GSM" repeat: 2 row: R3 }

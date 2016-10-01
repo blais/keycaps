@@ -18,14 +18,14 @@ set {
 
 kit_name: "Blanks"
 
-cap { size: U150 color: "BFJ" profile: SA_R3 repeat: 2 }
-cap { size: U150 color: "YCE" profile: SA_R3 repeat: 2 }
-cap { size: U150 color: "WBO" profile: SA_R3 repeat: 2 }
+cap { size: U150 color: "BFJ" profile: SA row: R3 repeat: 2 }
+cap { size: U150 color: "YCE" profile: SA row: R3 repeat: 2 }
+cap { size: U150 color: "WBO" profile: SA row: R3 repeat: 2 }
 
-cap { size: U100 color: "BFJ" profile: SA_R3 repeat: 2 }
-cap { size: U100 color: "YCE" profile: SA_R3 repeat: 2 }
-cap { size: U100 color: "WBO" profile: SA_R3 repeat: 2 }
+cap { size: U100 color: "BFJ" profile: SA row: R3 repeat: 2 }
+cap { size: U100 color: "YCE" profile: SA row: R3 repeat: 2 }
+cap { size: U100 color: "WBO" profile: SA row: R3 repeat: 2 }
 
-cap { size: U200 color: "BFJ" profile: SA_R3 }
-cap { size: U200 color: "YCE" profile: SA_R3 }
-cap { size: U200 color: "WBO" profile: SA_R3 }
+cap { size: U200 color: "BFJ" profile: SA row: R3 }
+cap { size: U200 color: "YCE" profile: SA row: R3 }
+cap { size: U200 color: "WBO" profile: SA row: R3 }

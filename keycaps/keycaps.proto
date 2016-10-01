@@ -10,34 +10,13 @@ syntax = "proto2";
 // Refer to: http://www.laurivan.com/wp-content/uploads/2015/06/FamilyProfilesLG.jpg
 enum Profile {
   DSA = 0;
-
-  SA = 21; // Generic SA
-  SA_R1 = 1;
-  SA_R2 = 2;
-  SA_R3 = 3;
-  SA_R4 = 4;
-
-  SS_R1 = 5;
-  SS_R2 = 6;
-  SS_R3 = 7;
-  SS_R4 = 8;
-
-  DSS_R1 = 9;
-  DSS_R2 = 10;
-  DSS_R3 = 11;
-  DSS_R4 = 12;
-
-  DCS_R1 = 13;
-  DCS_R2 = 14;
-  DCS_R3 = 15;
-  DCS_R4 = 16;
-  DCS_R5 = 17;
-
-  LP = 18;
-
-  KT = 19;
-
-  OEM = 20;
+  SA = 1;
+  SS = 2;
+  DSS = 3;
+  DCS = 4;
+  LP = 5;
+  KT = 6;
+  OEM = 7;
 }
 
 // A particular subgeometry for the profile of a key. Keys in some designs (e.g,
@@ -130,8 +109,8 @@ message Keycap {
   // If the key is designed for a particular row, the row. This is the case for
   // some SA keycaps, for example, whereby each row has a differently shaped
   // key. This is NOT to be used to represent which row a key is placed in its
-  // layout.
-  optional int32 row = 11;
+  // layout, but rather, which row the key is built for.
+  optional Row row = 11;
 
   // Indicates whether a keycap is narrower than its base.
   optional bool stepped = 12;
