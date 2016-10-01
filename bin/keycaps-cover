@@ -50,6 +50,10 @@ CSS = """
   visibility: visible;
 }
 
+.leftover {
+  border-style: dashed;
+  border-width: medium;
+}
 """
 
 
@@ -68,7 +72,7 @@ TEMPLATE = """\
 """
 
 KEY = """
-    <div class="key tooltip"
+    <div class="key tooltip {cls}"
          style="position: absolute; left: {left}px; top: {top}px; width: {width}px; height: {height}px; background-color: {color}">
       {text}
       <span class="tooltiptext">{tiptext}</span>
@@ -141,23 +145,42 @@ def main():
     # Try to find a matching key, first for switches with a role, then for
     # switches with no role. Row must always match.
     keys = list(allkeys)
+
+    switches = [switch
+                for cluster in keyboard.cluster
+                for switch in cluster.switch]
     matches = []
-    for func in [lambda s: bool(s.role),
-                 lambda s: not bool(s.role)]:
-        for cluster in keyboard.cluster:
-            for switch in cluster.switch:
-                if func(switch):
-                    continue
-                tr = (switch.size, switch.role, switch.row)
-                for index, key in enumerate(keys):
-                    sr = (key.size, key.role, key.row)
-                    if sr == tr:
-                        matches.append((switch, key))
-                        del keys[index]
-                        break
-                else:
-                     logging.error("Could not find key for switch: {}".format(
-                         text_format.MessageToString(switch, as_one_line=True)))
+    for i, (hasrole, func) in enumerate([(True, lambda s: bool(s.role)),
+                                         (True, lambda s: not bool(s.role)),
+                                         (False, lambda s: True)]):
+        if not switches:
+            break
+        nswitches = []
+        for switch in switches:
+            if not func(switch):
+                nswitches.append(switch)
+                continue
+            tr = (SIZE_WIDTH[switch.size],
+                  switch.role if hasrole else None,
+                  switch.row)
+            delete = []
+            for index, key in enumerate(keys):
+                sr = (SIZE_WIDTH[key.size],
+                      key.role if hasrole else None,
+                      key.row)
+                if sr == tr:
+                    matches.append((switch, key))
+                    delete.append(index)
+                    break
+            else:
+                nswitches.append(switch)
+            for index in delete:
+                del keys[index]
+        switches = nswitches
+
+    for switch in switches:
+        logging.error("Could not find key for switch: {}".format(
+            text_format.MessageToString(switch, as_one_line=True)))
 
     ## FIXME: Remove
     if 0:
@@ -181,6 +204,11 @@ def main():
         keyoss.write("</p>\n")
 
         text = '<i>{}</i><br/><b>{}</b>'.format(switch.role, key.text)
+
+        cls = ''
+        if switch.role and key.role and switch.role != key.role:
+            cls = 'leftover'
+
         keysoss.write(KEY.format(
             top=switch.y*U,
             left=switch.x*U,
@@ -188,7 +216,8 @@ def main():
             height=4*U - 2*margin,
             color=colors.get(key.color),
             text=text,
-            tiptext=keyoss.getvalue()))
+            tiptext=keyoss.getvalue(),
+            cls=cls))
 
     print(TEMPLATE.format(style=CSS, keys=keysoss.getvalue()))
 
