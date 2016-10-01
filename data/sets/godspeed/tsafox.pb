@@ -18,6 +18,7 @@ set {
 
 kit_name: "Tsafox"
 
+
 cap { role: "backspace" text: "BACK SPACE" size: U100 color: "BFJ" profile: SA_R1 }
 cap { role: "backslash" text: "\\ |"       size: U100 color: "BFJ" profile: SA_R1 }
 cap { role: "backslash" text: "\\ |"       size: U100 color: "WBO" profile: SA_R1 }
@@ -50,3 +51,5 @@ cap {                   text: "SYS"        size: U100 color: "BFJ" profile: SA_R
 cap {                   text: "FN"         size: U100 color: "BFJ" profile: SA_R3 }
 
 cap { role: "spacebar"                     size: U700 color: "WBO" profile: SA_R3 }
+
+cap { role: "spacebar"                     size: U700 color: "BFJ" profile: SA_R3 }
