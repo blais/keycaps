@@ -48,7 +48,7 @@ cap { role: "control"   text: "CTRL"       size: U100 color: "BFJ" profile: SA r
 cap { role: "alt"       text: "ALT"        size: U100 color: "BFJ" profile: SA row: R3 }
 cap {                   text: "CMD"        size: U100 color: "BFJ" profile: SA row: R3 }
 cap {                   text: "SYS"        size: U100 color: "BFJ" profile: SA row: R3 }
-cap {                   text: "FN"         size: U100 color: "BFJ" profile: SA row: R3 }
+cap { role: "function"  text: "FN"         size: U100 color: "BFJ" profile: SA row: R3 }
 
 cap { role: "spacebar"                     size: U700 color: "WBO" profile: SA row: R3 }
 

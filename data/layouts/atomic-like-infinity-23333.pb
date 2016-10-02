@@ -1,10 +1,32 @@
-name: "OLKB Planck Keyboard"
+name: "Atomic Keyboard - Layout Close to Infinity"
 manufacturer: "OLKB / Jack Humbert"
 
-# P row
+# Top row
 cluster {
   x: 0 y: 0
+  row: R2
+  switch { size: U100  role: "escape" }
+  switch { size: U100  role: "1" }
+  switch { size: U100  role: "2" }
+  switch { size: U100  role: "3" }
+  switch { size: U100  role: "4" }
+  switch { size: U100  role: "5" }
+  switch { size: U100  role: "6" }
+  switch { size: U100  role: "7" }
+  switch { size: U100  role: "8" }
+  switch { size: U100  role: "9" }
+  switch { size: U100  role: "0" }
+  switch { size: U100  role: "minus" }
+  switch { size: U100  role: "equal" }
+  switch { size: U100  role: "backslash" }
   switch { size: U100  role: "grave" }
+}
+
+# Q row
+cluster {
+  x: 0 y: 8
+  row: R3
+  switch { size: U100  role: "tab" }
   switch { size: U100  role: "q" }
   switch { size: U100  role: "w" }
   switch { size: U100  role: "e" }
@@ -15,12 +37,16 @@ cluster {
   switch { size: U100  role: "i" }
   switch { size: U100  role: "o" }
   switch { size: U100  role: "p" }
+  switch { size: U100  role: "[" }
+  switch { size: U100  role: "]" }
   switch { size: U100  role: "backspace" }
+  switch { size: U100  }
 }
 
 # A row
 cluster {
-  x: 0 y: 8
+  x: 0 y: 16
+  row: R3
   switch { size: U100  role: "control" }
   switch { size: U100  role: "a" }
   switch { size: U100  role: "s" }
@@ -33,11 +59,14 @@ cluster {
   switch { size: U100  role: "l" }
   switch { size: U100  role: "semicolon" }
   switch { size: U100  role: "apostrophe" }
+  switch { size: U200  role: "enter" }
+  switch { size: U100  }
 }
 
 # Z row
 cluster {
-  x: 0 y: 16
+  x: 0 y: 24
+  row: R3
   switch { size: U100  role: "shift" }
   switch { size: U100  role: "z" }
   switch { size: U100  role: "x" }
@@ -49,21 +78,22 @@ cluster {
   switch { size: U100  role: "comma" }
   switch { size: U100  role: "period" }
   switch { size: U100  role: "slash" }
-  switch { size: U100  role: "enter" }
+  switch { size: U200  role: "shift" }
+  switch { size: U100  role: "function" }
+  switch { size: U100  }
 }
 
-# Bottom row
+# Bottom row with a 6.25u spacebar.
 cluster {
-  x: 0 y: 24
-  switch { size: U100  role: "escape" }
+  x: 0 y: 32
+  row: R3
+  switch { size: U125  }
+  switch { size: U125  role: "super" }
+  switch { size: U125  role: "meta" }
+  switch { size: U625  role: "spacebar" }
+  switch { size: U100  role: "function" }
   switch { size: U100  }
-  switch { size: U100  role: "super" }
-  switch { size: U100  role: "meta" }
-  switch { size: U100  role: "low" }
-  switch { size: U200  role: "spacebar" }
-  switch { size: U100  role: "high" }
-  switch { size: U100  role: "left" }
-  switch { size: U100  role: "down" }
-  switch { size: U100  role: "up" }
-  switch { size: U100  role: "right" }
+  switch { size: U100  }
+  switch { size: U100  }
+  switch { size: U100  }
 }

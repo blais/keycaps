@@ -4,6 +4,7 @@ manufacturer: "OLKB / Jack Humbert"
 # P row
 cluster {
   x: 0 y: 0
+  row: R3
   switch { size: U100  role: "grave" }
   switch { size: U100  role: "q" }
   switch { size: U100  role: "w" }
@@ -21,6 +22,7 @@ cluster {
 # A row
 cluster {
   x: 0 y: 8
+  row: R3
   switch { size: U100  role: "control" }
   switch { size: U100  role: "a" }
   switch { size: U100  role: "s" }
@@ -38,6 +40,7 @@ cluster {
 # Z row
 cluster {
   x: 0 y: 16
+  row: R3
   switch { size: U100  role: "shift" }
   switch { size: U100  role: "z" }
   switch { size: U100  role: "x" }
@@ -55,6 +58,7 @@ cluster {
 # Bottom row
 cluster {
   x: 0 y: 24
+  row: R3
   switch { size: U100  role: "escape" }
   switch { size: U100  }
   switch { size: U100  role: "super" }

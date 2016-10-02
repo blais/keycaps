@@ -1,5 +1,7 @@
 Add direct photo URLs, and pull in the photos for each kit.
 
+- The desired layout's row assignment needs to be an option to "keycaps-cover".
+
 - An easy way to render alternatives is to render all the remaining keys below
   the assignment.
 
@@ -12,9 +14,8 @@ Add direct photo URLs, and pull in the photos for each kit.
 
 Missing data:
 
-# FIXME: colorful keys
-# FIXME: topre keys
-# FIXME: kit sent by madereth
+# FIXME: extra topre and normal HHKB keys
+# FIXME: kit of Matias keycaps sent by madereth
 
 - Create alternatives for keyboards.
 
@@ -25,8 +26,6 @@ Missing data:
 - Keyboard descriptions should have rows, so that they are easier to define.
   Assume each row moves by the size of its key, instead of having to provide
   each position.
-
-- Rename Key -> Keycap.
 
 - Keyboard layout name really ought to be called "layout".
 

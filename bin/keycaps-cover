@@ -4,6 +4,7 @@
 __author__ = 'Martin Blais <blais@furius.ca>'
 
 import argparse
+import collections
 import itertools
 import io
 import logging
@@ -21,7 +22,7 @@ def read_kit(filename):
         for name in 'profile', 'stem', 'material':
             if not key.HasField(name):
                 setattr(key, name, getattr(kit.set, name))
-        yield key
+    return kit
 
 
 CSS = """
@@ -50,9 +51,30 @@ CSS = """
   visibility: visible;
 }
 
-.leftover {
+.unmatched {
   border-style: dashed;
   border-color: red;
+}
+
+.other-role {
+  border-style: dashed;
+  border-color: red;
+}
+
+.unused {
+  display: inline-block;
+  position: relative;
+}
+
+.role {
+  font-style: italic;
+}
+.marking {
+  font-weight: bold;
+  font-size: larger;
+}
+.row {
+  color: #333333;
 }
 """
 
@@ -66,7 +88,13 @@ TEMPLATE = """\
     </style>
   </head>
   <body>
+    <h1>Assigned Layout</h1>
+    <div id="assignment" style="height: {assigned_height}px; position: relative;">
 {keys}
+    </div>
+
+    <h1>Unused Keycaps</h1>
+{unused}
   </body>
 </html>
 """
@@ -79,6 +107,13 @@ KEY = """
     </div>
 """
 
+UNUSED_KEY = """
+    <div class="key tooltip {cls}"
+         style="width: {width}px; height: {height}px; background-color: {color}">
+      {text}
+      <span class="tooltiptext">{tiptext}</span>
+    </div>
+"""
 
 # The width of a key along its main direction.
 SIZE_WIDTH = {
@@ -129,12 +164,19 @@ def fill_positions(keyboard):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__.strip())
-    parser.add_argument('keyboard', help='Keyboard filename')
-    parser.add_argument('kits', nargs='+', help='Filenames of all kits')
+    parser.add_argument('keyboard',
+                        help='Keyboard filename')
+    parser.add_argument('kits', nargs='+',
+                        help='Filenames of all kits')
+    parser.add_argument('--loose', action='store_true', default=False,
+                        help='Match invalid roles to keys')
     args = parser.parse_args()
 
-    allkeys = list(itertools.chain.from_iterable(read_kit(filename)
-                                                 for filename in args.kits))
+    allkeys = []
+    for filename in args.kits:
+        kit = read_kit(filename)
+        for key in kit.cap:
+            allkeys.append((kit.kit_name, key))
 
     # Read the target keyboard layout file we have to cover.
     keyboard_ = keyio.read_file(args.keyboard, keycaps_pb2.Keyboard)
@@ -150,25 +192,29 @@ def main():
                 for cluster in keyboard.cluster
                 for switch in cluster.switch]
     matches = []
-    for i, (hasrole, func) in enumerate([(True, lambda s: bool(s.role)),
-                                         (True, lambda s: not bool(s.role)),
-                                         (False, lambda s: True)]):
+
+    match_sets = [
+        (lambda sw, key: sw.HasField('role') and sw.role == key.role),
+        (lambda sw, key: sw.HasField('role') and not key.HasField('role')),
+        (lambda sw, key: not sw.HasField('role') and not key.HasField('role')),
+        #(lambda sw, key: sw.HasField('role') ^ key.HasField('role')),
+        ]
+    if args.loose:
+        match_sets.append((lambda sw, key: not sw.HasField('role') and key.HasField('role')))
+        #match_sets.append((lambda sw, key: True))
+
+    for i, func in enumerate(match_sets):
         if not switches:
             break
         nswitches = []
         for switch in switches:
-            if not func(switch):
-                nswitches.append(switch)
-                continue
-            tr = (SIZE_WIDTH[switch.size],
-                  switch.role if hasrole else None,
-                  switch.row)
             delete = []
-            for index, key in enumerate(keys):
-                sr = (SIZE_WIDTH[key.size],
-                      key.role if hasrole else None,
-                      key.row)
-                if sr == tr:
+            tr = (SIZE_WIDTH[switch.size], switch.row)
+            for index, (kit_name, key) in enumerate(keys):
+                sr = (SIZE_WIDTH[key.size], key.row)
+                if sr != tr:
+                    continue
+                if func(switch, key):
                     matches.append((switch, key))
                     delete.append(index)
                     break
@@ -181,47 +227,88 @@ def main():
     for switch in switches:
         logging.error("Could not find key for switch: {}".format(
             text_format.MessageToString(switch, as_one_line=True)))
+    matches.extend((switch, None) for switch in switches)
 
-    ## FIXME: Remove
-    if 0:
-        # Print the list of succesfully matched keys.
-        for switch, key in matches:
-            print(text_format.MessageToString(switch, as_one_line=True))
-            print(text_format.MessageToString(key, as_one_line=True))
-            print()
-
-    # Render some HTML of the assignment.
+    # Render the assigned keys.
     U = 12
+    max_y = 0
     margin = 5
     keysoss = io.StringIO()
     for switch, key in matches:
-        keyoss = io.StringIO()
-        keyoss.write("<p>SWITCH: ")
-        keyoss.write(text_format.MessageToString(switch, as_one_line=True))
-        keyoss.write("</p>\n")
-        keyoss.write("<p>KEY: ")
-        keyoss.write(text_format.MessageToString(key, as_one_line=True))
-        keyoss.write("</p>\n")
+        oss = io.StringIO()
+        oss.write("<p>SWITCH: ")
+        oss.write(text_format.MessageToString(switch, as_one_line=True))
+        oss.write("</p>\n")
+        if key:
+            oss.write("<p>KEY: ")
+            oss.write(text_format.MessageToString(key, as_one_line=True))
+            oss.write("</p>\n")
 
-        text = '<i>{}</i><br/><b>{}</b>'.format(switch.role, key.text)
+        text = '<span class="role">{}</span>'.format(switch.role)
+        if key:
+            text += '\n<br/><span class="marking">{}</span>'.format(key.text or key.glyph)
+            if key.row:
+                text += '\n<br/><span class="row">{}</span>'.format(keycaps_pb2.Row.Name(key.row))
 
-        cls = ''
-        if switch.role and key.role and switch.role != key.role:
-            cls = 'leftover'
+        if key:
+            if switch.role and key.role and switch.role != key.role:
+                cls = 'other-role'
+            else:
+                cls = ''
+        else:
+            cls = 'unmatched'
 
+        top = switch.y*U
+        height = 8*U - 2*margin
         keysoss.write(KEY.format(
-            top=switch.y*U,
+            top=top,
             left=switch.x*U,
             width=int(SIZE_WIDTH[switch.size]*U) - 2*margin,
-            height=8*U - 2*margin,
-            color=colors.get(key.color),
+            height=height,
+            color=colors.get(key.color) if key else '#FFFFFF',
             text=text,
-            tiptext=keyoss.getvalue(),
+            tiptext=oss.getvalue(),
             cls=cls))
+        max_y = max(max_y, top + height)
 
-    print(TEMPLATE.format(style=CSS, keys=keysoss.getvalue()))
+    max_y += 2*margin
+
+    # Render all the unused keys.
+    groups = collections.defaultdict(list)
+    for kit_name, key in keys:
+        groups[kit_name].append(key)
+    unused_oss = io.StringIO()
+    for kit_name, kit_keys in sorted(groups.items()):
+        unused_oss.write('<h2>{}</h2>\n'.format(kit_name))
+        unused_oss.write('<div class="unused">\n')
+        for key in kit_keys:
+            oss = io.StringIO()
+            oss.write("<p>KEY: ")
+            oss.write(text_format.MessageToString(key, as_one_line=True))
+            oss.write("</p>\n")
+
+            text = '<span class="role">{}</span>'.format(key.role)
+            text += '<br/><span class="marking">{}</span>'.format(key.text or key.glyph)
+            if key.row:
+                text += '\n<br/><span class="row">{}</span>'.format(keycaps_pb2.Row.Name(key.row))
+            cls = 'unused'
+
+            unused_oss.write(UNUSED_KEY.format(
+                width=int(SIZE_WIDTH[key.size]*U) - 2*margin,
+                height=8*U - 2*margin,
+                color=colors.get(key.color) if key else '#FFFFFF',
+                text=text,
+                tiptext=oss.getvalue(),
+                cls=cls))
+        unused_oss.write('</div>\n')
+
+    print(TEMPLATE.format(style=CSS,
+                          assigned_height=max_y,
+                          keys=keysoss.getvalue(),
+                          unused=unused_oss.getvalue()))
 
 
+# TODO(blais): Support vertical keys.
 
 
 if __name__ == '__main__':
