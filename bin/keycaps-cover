@@ -8,6 +8,7 @@ import collections
 import itertools
 import io
 import logging
+import re
 import sys
 
 from keycaps import colors
@@ -166,12 +167,28 @@ def read_keyboard(filename):
     return keyboard
 
 
+def get_rows(keyboard):
+    """Given a keyboard layout, compute the unique rows it has.
+
+    Args:
+      keyboard: An instance of Keyboard.
+    Returns:
+      A list of integers, the number of unique rows found.
+    """
+    ys = set(switch.y
+             for cluster in keyboard.cluster
+             for switch in cluster.switch)
+    return sorted(ys)
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__.strip())
     parser.add_argument('keyboard',
                         help='Keyboard filename')
     parser.add_argument('kits', nargs='+',
                         help='Filenames of all kits')
+    parser.add_argument('-r', '--rows', action='store',
+                        help="Desired row shapes for the layout, e.g. 12343")
     parser.add_argument('--allow-roles-on-blanks', action='store_true', default=False,
                         help='Allow caps with roles on switches with no role')
     parser.add_argument('--allow-invalid-roles', action='store_true', default=False,
@@ -186,6 +203,22 @@ def main():
 
     # Read the target keyboard layout file we have to cover.
     keyboard = read_keyboard(args.keyboard)
+
+    if args.rows:
+        if not re.match('\d+', args.rows):
+            parser.error("Invalid row specification, must be all digits")
+        row_ys = get_rows(keyboard)
+        if len(args.rows) != len(row_ys):
+            parser.error("Invalid number of rows for layout: {} != {}".format(
+                len(args.rows), len(row_ys)))
+        rows = [keycaps_pb2.Row.Value('R{}'.format(c)) for c in args.rows]
+        row_mapping = dict(zip(row_ys, rows))
+        k = keycaps_pb2.Keyboard()
+        k.CopyFrom(keyboard)
+        for cluster in k.cluster:
+             for switch in cluster.switch:
+                 switch.row = row_mapping[switch.y]
+        keyboard = k
 
     # Define increasingly narrow stages of matching caps to switches.
     match_sets = [
