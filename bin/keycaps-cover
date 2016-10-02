@@ -136,19 +136,18 @@ SIZE_WIDTH = {
 }
 
 
-
-def fill_positions(keyboard):
-    """Fill in the position of the individual switches from its clusters.
+def read_keyboard(filename):
+    """Read a keyboard layout file and inherit data.
 
     Args:
-      keyboard: An instance of Keyboard.
+      filename: A string, the name of the file to read.
     Returns:
-      A copy of 'keyboard' with the x,y coordinates on all the switches resolved
-      from their parent clusters.
+      An instance of Keyboard.
     """
-    output = keycaps_pb2.Keyboard()
-    output.CopyFrom(keyboard)
-    for cluster in output.cluster:
+    keyboard = keyio.read_file(filename, keycaps_pb2.Keyboard)
+
+    # Fill in the (x, y) position of each switch.
+    for cluster in keyboard.cluster:
         x = cluster.x
         y = cluster.y
         for switch in cluster.switch:
@@ -156,10 +155,15 @@ def fill_positions(keyboard):
                 switch.x = x
             if not switch.HasField('y'):
                 switch.y = y
+            x += SIZE_WIDTH[switch.size]
+
+    # Inherit the cluster's row onto their switches.
+    for cluster in keyboard.cluster:
+        for switch in cluster.switch:
             if not switch.HasField('row'):
                 switch.row = cluster.row
-            x += SIZE_WIDTH[switch.size]
-    return output
+
+    return keyboard
 
 
 def main():
@@ -168,8 +172,10 @@ def main():
                         help='Keyboard filename')
     parser.add_argument('kits', nargs='+',
                         help='Filenames of all kits')
-    parser.add_argument('--loose', action='store_true', default=False,
-                        help='Match invalid roles to keys')
+    parser.add_argument('--allow-roles-on-blanks', action='store_true', default=False,
+                        help='Allow caps with roles on switches with no role')
+    parser.add_argument('--allow-invalid-roles', action='store_true', default=False,
+                        help='Allow caps with roles on switches a different role')
     args = parser.parse_args()
 
     allkeys = []
@@ -179,30 +185,25 @@ def main():
             allkeys.append((kit.kit_name, key))
 
     # Read the target keyboard layout file we have to cover.
-    keyboard_ = keyio.read_file(args.keyboard, keycaps_pb2.Keyboard)
+    keyboard = read_keyboard(args.keyboard)
 
-    # Fill in the position of the individual switches from its clusters.
-    keyboard = fill_positions(keyboard_)
-
-    # Try to find a matching key, first for switches with a role, then for
-    # switches with no role. Row must always match.
-    keys = list(allkeys)
-
-    switches = [switch
-                for cluster in keyboard.cluster
-                for switch in cluster.switch]
-    matches = []
-
+    # Define increasingly narrow stages of matching caps to switches.
     match_sets = [
         (lambda sw, key: sw.HasField('role') and sw.role == key.role),
         (lambda sw, key: sw.HasField('role') and not key.HasField('role')),
         (lambda sw, key: not sw.HasField('role') and not key.HasField('role')),
-        #(lambda sw, key: sw.HasField('role') ^ key.HasField('role')),
         ]
-    if args.loose:
+    if args.allow_roles_on_blanks:
         match_sets.append((lambda sw, key: not sw.HasField('role') and key.HasField('role')))
-        #match_sets.append((lambda sw, key: True))
+    if args.allow_invalid_roles:
+        match_sets.append((lambda sw, key: True))
 
+    # Process each matching stage.
+    keys = list(allkeys)
+    switches = [switch
+                for cluster in keyboard.cluster
+                for switch in cluster.switch]
+    matches = []
     for i, func in enumerate(match_sets):
         if not switches:
             break
