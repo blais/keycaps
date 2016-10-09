@@ -167,6 +167,7 @@ def read_keyboard(filename):
 
 
 def main():
+    logging.basicConfig(level=logging.INFO, format='%(levelname)-8s: %(message)s')
     parser = argparse.ArgumentParser(description=__doc__.strip())
     parser.add_argument('keyboard',
                         help='Keyboard filename')
@@ -176,13 +177,21 @@ def main():
                         help='Allow caps with roles on switches with no role')
     parser.add_argument('--allow-invalid-roles', action='store_true', default=False,
                         help='Allow caps with roles on switches a different role')
+    parser.add_argument('--cost', action='store_true', default=False,
+                        help='Calculate and print the cost of the set of kits')
     args = parser.parse_args()
 
+    kits = [read_kit(filename) for filename in args.kits]
     allkeys = []
-    for filename in args.kits:
-        kit = read_kit(filename)
+    for kit in kits:
         for key in kit.cap:
             allkeys.append((kit.kit_name, key))
+
+    if args.cost:
+        costs = [kit.original_cost
+                 for kit in kits
+                 if kit.HasField('original_cost')]
+        logging.info("Total Cost: %s", sum(costs))
 
     # Read the target keyboard layout file we have to cover.
     keyboard = read_keyboard(args.keyboard)

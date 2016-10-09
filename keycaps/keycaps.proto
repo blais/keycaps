@@ -159,6 +159,12 @@ message Kit {
 
   // The list of keys in this kit.
   repeated Keycap cap = 3;
+
+  // Approximate dates of release of this kit (format unspecified).
+  repeated string release_date = 4;
+
+  // The original cost of the kit, in USD.
+  optional float original_cost = 5;
 }
 
 message Kits {

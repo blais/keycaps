@@ -17,6 +17,7 @@ set {
 }
 
 kit_name: "Tsafox"
+original_cost: 37.99
 
 
 cap { role: "backspace" text: "BACK SPACE" size: U100 color: "BFJ" profile: SA row: R1 }

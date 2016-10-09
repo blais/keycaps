@@ -17,6 +17,7 @@ set {
 }
 
 kit_name: "Cockpit - Flat Flight Lunar Module"
+original_cost: 69.99
 
 # Note: This is a special "flat" kit whose profile does not match the other
 # alphas kits available for this set. The keys here are mostly ROW 2, except for

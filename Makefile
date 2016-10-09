@@ -12,12 +12,36 @@ keycaps/keycaps_pb2.py: $(PWD)/keycaps/keycaps.proto
 	protoc -I $(PWD)/keycaps --python_out $(PWD)/keycaps --proto_path $(PWD)/keycaps $<
 
 
-LAYOUTS=$(PWD)/data/layouts
-SETS=$(PWD)/data/sets
-EXTRAS=$(SETS)/godspeed/{novelties,tsafox,blanks}.pb
-godspeed:
-	keycaps-cover $(LAYOUTS)/infinity-hacker-mod-spacebar-sa-23333.pb	$(SETS)/godspeed/cockpit.pb		$(EXTRAS) > /tmp/infinity-23333.html
-	keycaps-cover $(LAYOUTS)/atomic-like-infinity-23333.pb			$(SETS)/godspeed/cockpit.pb		$(EXTRAS) > /tmp/atomic-23333.html
-	keycaps-cover $(LAYOUTS)/planck-3333.pb					$(SETS)/godspeed/cockpit.pb	 	$(EXTRAS) > /tmp/planck-3333.html
-	keycaps-cover $(LAYOUTS)/infinity-hacker-mod-spacebar-sa-12343.pb	$(SETS)/godspeed/solar-alphas.pb	$(EXTRAS) > /tmp/infinity-12343.html
-	keycaps-cover $(LAYOUTS)/atomic-like-infinity-12343.pb			$(SETS)/godspeed/solar-alphas.pb	$(EXTRAS) > /tmp/atomic-12343.html
+LAYOUTS = $(PWD)/data/layouts
+SETS    = $(PWD)/data/sets
+
+OUT = /tmp/godspeed
+
+KITS =						\
+	$(SETS)/godspeed/cockpit.pb		\
+	$(SETS)/godspeed/novelties.pb		\
+	$(SETS)/godspeed/blanks.pb		\
+	$(SETS)/godspeed/tsafox.pb
+
+# KITS =						\
+# 	$(SETS)/godspeed/solar-alphas.pb	\
+# 	$(SETS)/godspeed/novelties.pb		\
+# 	$(SETS)/godspeed/blanks.pb		\
+#	$(SETS)/godspeed/tsafox.pb
+
+
+COVER = keycaps-cover				\
+	--cost					\
+	# --allow-roles-on-blanks			\
+	# --allow-invalid-roles
+
+godspeed-23333:
+	mkdir -p $(OUT)
+	$(COVER) $(LAYOUTS)/infinity-hacker-mod-spacebar-sa-23333.pb	$(KITS) > $(OUT)/infinity-23333.html
+	$(COVER) $(LAYOUTS)/atomic-like-infinity-23333.pb		$(KITS) > $(OUT)/atomic-23333.html
+	$(COVER) $(LAYOUTS)/planck-3333.pb				$(KITS) > $(OUT)/planck-3333.html
+
+godspeed-12343:
+	$(COVER) $(LAYOUTS)/infinity-hacker-mod-spacebar-sa-12343.pb	$(KITS) > $(OUT)/infinity-12343.html
+	$(COVER) $(LAYOUTS)/atomic-like-infinity-12343.pb		$(KITS) > $(OUT)/atomic-12343.html
+	$(COVER) $(LAYOUTS)/planck-3333.pb				$(KITS) > $(OUT)/planck-3333.html

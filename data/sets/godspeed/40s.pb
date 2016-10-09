@@ -17,6 +17,7 @@ set {
 }
 
 kit_name: "40s"
+original_cost: 47.99
 
 
 # Row 2

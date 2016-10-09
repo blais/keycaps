@@ -17,6 +17,7 @@ set {
 }
 
 kit_name: "Novelties"
+original_cost: 39.99
 
 cap {                 text: "ROLL"         size: U100 color: "RA" profile: SA row: R1 }
 cap {                 text: "PITCH"        size: U100 color: "RA" profile: SA row: R1 }

@@ -17,6 +17,7 @@ set {
 }
 
 kit_name: "Blanks"
+original_cost: 21.99
 
 cap { size: U150 color: "BFJ" profile: SA row: R3 repeat: 2 }
 cap { size: U150 color: "YCE" profile: SA row: R3 repeat: 2 }

@@ -17,6 +17,7 @@ set {
 }
 
 kit_name: "Solar Alphas"
+original_cost: 36.99
 
 
 # Top row.
