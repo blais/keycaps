@@ -1,7 +1,5 @@
 Add direct photo URLs, and pull in the photos for each kit.
 
-- The desired layout's row assignment needs to be an option to "keycaps-cover".
-
 - An easy way to render alternatives is to render all the remaining keys below
   the assignment.
 
