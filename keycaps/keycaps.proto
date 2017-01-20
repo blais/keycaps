@@ -16,6 +16,7 @@ enum Profile {
   DCS = 4;
   LP = 5;
   KT = 6;
+  XDA = 8;
   OEM = 7;
 }
 
