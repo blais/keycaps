@@ -1,7 +1,12 @@
 #!/usr/bin/env python3
+import warnings
 
 def get(name):
-    return globals()[name]
+    try:
+        return globals()[name]
+    except KeyError:
+        warnings.warn("Could not find color: {}".format(name))
+        return rgb(255, 255, 255)
 
 def rgb(r, g, b):
     return '#{:06X}'.format(r << 16 | g << 8 | b)
