@@ -5,7 +5,8 @@ def get(name):
     try:
         return globals()[name]
     except KeyError:
-        warnings.warn("Color not found: {}".format(name))
+        warnings.warn("Could not find color: {}".format(name))
+        return rgb(255, 255, 255)
 
 def rgb(r, g, b):
     return '#{:06X}'.format(r << 16 | g << 8 | b)
