@@ -31,7 +31,9 @@ cap { role: "alt"     text: "alt"   size: U150 color: "green" }
 cap { role: "alt"     text: "alt"   size: U150 color: "green" }
 
 cap { role: "shift"   text: "shift" size: U175 color: "orange" }
-cap { role: "shift"   text: "hack"  size: U175 color: "orange" }
+cap {                 text: "hack"  size: U175 color: "orange" }
+cap { role: "shift"   text: "shift" size: U225 color: "orange" }
+cap { role: "shift"   text: "shift" size: U275 color: "orange" }
 
-cap { role: "enter"   text: "enter" size: U175 color: "blue" }
-cap { role: "enter"   text: "enter" size: U175 color: "green" }
+cap { role: "enter"   text: "enter" size: U225 color: "blue" }
+cap { role: "enter"   text: "enter" size: U225 color: "green" }

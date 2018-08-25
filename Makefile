@@ -15,38 +15,51 @@ keycaps/keycaps_pb2.py: $(PWD)/keycaps/keycaps.proto
 LAYOUTS = $(PWD)/data/layouts
 SETS    = $(PWD)/data/sets
 
-OUT = /tmp/godspeed
+OUT = /tmp/canvas
 
-KITS =						\
-	$(SETS)/godspeed/cockpit.pb		\
-	$(SETS)/godspeed/novelties.pb		\
-	$(SETS)/godspeed/blanks.pb		\
-	$(SETS)/godspeed/tsafox.pb
 
-# KITS =						\
-# 	$(SETS)/godspeed/solar-alphas.pb	\
-# 	$(SETS)/godspeed/novelties.pb		\
-# 	$(SETS)/godspeed/blanks.pb		\
-#	$(SETS)/godspeed/tsafox.pb
+
+
+KITS =							\
+	$(SETS)/canvas/alphas.pb			\
+	$(SETS)/canvas/bauhaus-icon-modifiers.pb	\
+	$(SETS)/canvas/extra-icon-modifiers.pb		\
+	$(SETS)/canvas/blanks.pb			\
+	$(SETS)/canvas/odd-bars.pb
+
+	# $(SETS)/canvas/mini-bars.pb			\
+	# $(SETS)/canvas/space-bars.pb
+
+#	$(SETS)/canvas/basic-icon-modifiers.pb
+#	$(SETS)/canvas/ortholinear-icon-modifiers.pb
+#	$(SETS)/canvas/tsangan-icon-modifiers.pb
+#	$(SETS)/canvas/blanks.pb
+#	$(SETS)/canvas/dieter-rams.pb
+#	$(SETS)/canvas/mini-bars.pb
+#	$(SETS)/canvas/space-bars.pb
+
+#	$(SETS)/canvas/betas.pb
+#	$(SETS)/canvas/bauhaus-text-modifiers.pb
+#	$(SETS)/canvas/ortholinear-text-modifiers.pb
+#	$(SETS)/canvas/tsangan-text-modifiers.pb
+#	$(SETS)/canvas/basic-text-modifiers.pb
+
+
 
 
 COVER = keycaps-cover				\
-	--cost					\
-	# --allow-roles-on-blanks			\
-	# --allow-invalid-roles
+	--calculate-cost
+
+#	--allow-roles-on-blanks
+#	--allow-invalid-roles
 
 LAYOUTS=$(PWD)/data/layouts
 SETS=$(PWD)/data/sets
-EXTRAS=$(SETS)/godspeed/{novelties,tsafox,blanks}.pb
+EXTRAS=$(SETS)/canvas/{novelties,tsafox,blanks}.pb
 
-godspeed-23333:
+canvas:
 	mkdir -p $(OUT)
-	$(COVER) --rows=23333 $(LAYOUTS)/infinity-hacker-mod-spacebar.pb	$(KITS) > $(OUT)/infinity-23333.html
-	$(COVER) --rows=23333 $(LAYOUTS)/atomic-like-infinity.pb		$(KITS) > $(OUT)/atomic-23333.html
-	$(COVER) --rows=3333  $(LAYOUTS)/planck.pb				$(KITS) > $(OUT)/planck-3333.html
-
-godspeed-12343:
-	mkdir -p $(OUT)
-	$(COVER) --rows=12343 $(LAYOUTS)/infinity-hacker-mod-spacebar.pb	$(KITS) > $(OUT)/infinity-12343.html
-	$(COVER) --rows=12343 $(LAYOUTS)/atomic-like-infinity.pb		$(KITS) > $(OUT)/atomic-12343.html
-	$(COVER) --rows=3333  $(LAYOUTS)/planck.pb				$(KITS) > $(OUT)/planck-3333.html
+	$(COVER) $(LAYOUTS)/infinity-hacker-mod-spacebar.pb	$(KITS) > $(OUT)/infinity-mod.html
+	$(COVER) $(LAYOUTS)/infinity-hacker.pb	                $(KITS) > $(OUT)/infinity.html
+	$(COVER) $(LAYOUTS)/atomic-like-infinity.pb		$(KITS) > $(OUT)/atomic.html
+	$(COVER) $(LAYOUTS)/planck.pb				$(KITS) > $(OUT)/planck.html

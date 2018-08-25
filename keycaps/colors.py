@@ -1,10 +1,22 @@
 #!/usr/bin/env python3
+import warnings
 
 def get(name):
-    return globals()[name]
+    try:
+        return globals()[name]
+    except KeyError:
+        warnings.warn("Color not found: {}".format(name))
 
 def rgb(r, g, b):
     return '#{:06X}'.format(r << 16 | g << 8 | b)
+
+yellow = rgb(255, 255, 128)
+green = rgb(128, 255, 128)
+blue = rgb(128, 128, 255)
+orange = rgb(255, 192, 128)
+red = rgb(255, 128, 128)
+lightgray = rgb(225, 225, 225)
+gray = rgb(200, 200, 200)
 
 # PBT colors.
 BCT = rgb(0, 117, 173)

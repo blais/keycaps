@@ -59,10 +59,13 @@ enum Size {
   U250 = 10;
   U275 = 11;
   U300 = 12;
+  U450 = 31;
+  U550 = 32;
   U600 = 24;  // Stems: [-2u, 0u, +2u]
   U625 = 25;  // Stems: Uncertain / flexible.
   U625S = 26; // Stems: [-2.625u, 0u, 0.6u, 2.625u] (Standard)
   U625U = 27; // Stems: [-2.625u, -2u, 0u, 0.6u, +2u, +2.625u] (Universal)
+  U650 = 33;  // Stems: ?
   U700 = 28;  // Stems: [-3u, 0u, +3u]
 
   // Vertical keys.

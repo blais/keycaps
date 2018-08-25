@@ -31,7 +31,9 @@ cap { role: "alt"     glyph: "^v"  size: U150 color: "green" }
 cap { role: "alt"     glyph: "^v"  size: U150 color: "green" }
 
 cap { role: "shift"   glyph: "_^_" size: U175 color: "orange" }
-cap { role: "shift"   glyph: ">_"  size: U175 color: "orange" }
+cap {                 glyph: ">_"  size: U175 color: "orange" }
+cap { role: "shift"   glyph: "_^_"  size: U225 color: "orange" }
+cap { role: "shift"   glyph: "_^_"  size: U275 color: "orange" }
 
-cap { role: "enter"   glyph: "..v" size: U175 color: "blue" }
-cap { role: "enter"   glyph: "..v" size: U175 color: "green" }
+cap { role: "enter"   glyph: "..v" size: U225 color: "blue" }
+cap { role: "enter"   glyph: "..v" size: U225 color: "green" }

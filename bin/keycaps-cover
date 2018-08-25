@@ -127,10 +127,13 @@ SIZE_WIDTH = {
     keycaps_pb2.U250: 20,
     keycaps_pb2.U275: 22,
     keycaps_pb2.U300: 24,
+    keycaps_pb2.U450: 36,
+    keycaps_pb2.U550: 44,
     keycaps_pb2.U600: 48,
     keycaps_pb2.U625: 50,
     keycaps_pb2.U625S: 50,
     keycaps_pb2.U625U: 50,
+    keycaps_pb2.U650: 52,
     keycaps_pb2.U700: 56,
     keycaps_pb2.V200: 16,
     keycaps_pb2.VISO: None,
@@ -194,9 +197,11 @@ def main():
                         help='Allow caps with roles on switches with no role')
     parser.add_argument('--allow-invalid-roles', action='store_true', default=False,
                         help='Allow caps with roles on switches a different role')
-    parser.add_argument('--cost', action='store_true', default=False,
+    parser.add_argument('--calculate-cost', '--cost', action='store_true', default=False,
                         help='Calculate and print the cost of the set of kits')
     args = parser.parse_args()
+
+    do_render_rows = bool(args.rows)
 
     kits = [read_kit(filename) for filename in args.kits]
     allkeys = []
@@ -204,7 +209,7 @@ def main():
         for key in kit.cap:
             allkeys.append((kit.kit_name, key))
 
-    if args.cost:
+    if args.calculate_cost:
         costs = [kit.original_cost
                  for kit in kits
                  if kit.HasField('original_cost')]
@@ -290,7 +295,7 @@ def main():
         text = '<span class="role">{}</span>'.format(switch.role)
         if key:
             text += '\n<br/><span class="marking">{}</span>'.format(key.text or key.glyph)
-            if key.row:
+            if do_render_rows and key.row:
                 text += '\n<br/><span class="row">{}</span>'.format(keycaps_pb2.Row.Name(key.row))
 
         if key:
@@ -332,7 +337,7 @@ def main():
 
             text = '<span class="role">{}</span>'.format(key.role)
             text += '<br/><span class="marking">{}</span>'.format(key.text or key.glyph)
-            if key.row:
+            if do_render_rows and key.row:
                 text += '\n<br/><span class="row">{}</span>'.format(keycaps_pb2.Row.Name(key.row))
             cls = 'unused'
 
